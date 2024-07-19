@@ -14,7 +14,7 @@
 ```npm run build```
 
 ## Ссылки
-- Демо на Netlify: https://yandex-practicum-itopweb11-sprint1.netlify.app
+- Демо на Netlify: https://jolly-crumble-a067ee.netlify.app/
 - Макет на Figma: https://www.figma.com/design/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?node-id=0-1&t=Q276IjJfDsN5ywGL-0
 
 
