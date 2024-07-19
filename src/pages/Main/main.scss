@@ -1,0 +1,23 @@
+.main {
+  border-radius: 10px;
+  box-shadow: 0 2px 9px 3px rgba(0, 0, 1, .14);
+  padding: 40px;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    a {
+      text-decoration: none;
+      font-size: 25px;
+      padding: 0 100px;
+      color: black;
+
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+}

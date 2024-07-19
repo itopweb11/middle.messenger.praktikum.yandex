@@ -1,0 +1,20 @@
+.button {
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: #3369F3;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__desc {
+    background-color: #3369F3;
+    color: #FFFFFF;
+    font-size: 15px;
+    border: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

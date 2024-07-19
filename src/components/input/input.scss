@@ -1,0 +1,23 @@
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &__label {
+    color: #999999;
+    font-size: 13px;
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    width: 280px;
+    border-bottom: 1px solid #3369F3;
+    color: #1E1E1E;
+    font-size: 16px;
+  }
+
+  .profileAvatarInput {
+
+  }
+}

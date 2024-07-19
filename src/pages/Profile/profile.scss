@@ -1,0 +1,87 @@
+.profile {
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 1px solid #EFEFEF;
+      background: #EFEFEF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        transition: 1s;
+        cursor: pointer;
+        background: #353434;
+
+        .profile__form__avatar__desc {
+          opacity: 1;
+        }
+      }
+
+      &__desc {
+        text-align: center;
+        color: #FFFFFF;
+        font-size: 13px;
+        opacity: 0;
+      }
+    }
+
+    &__name {
+      margin-top: 20px;
+      color: #1E1E1E;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    &__inputs {
+      margin-top: 50px;
+
+      div {
+        width: 510px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
+        border-bottom: 1px solid #3369F3;
+        padding-bottom: 5px;
+
+        input {
+          border: none;
+          text-align: end;
+          color: #999999;
+          font-size: 13px;
+          flex: 1;
+        }
+
+        label {
+          color: #1E1E1E;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    a:not(:last-child) {
+      border-bottom: 1px solid #EAEAEA;
+      padding-bottom: 5px;
+    }
+
+    a:last-child {
+      color: red;
+    }
+  }
+}

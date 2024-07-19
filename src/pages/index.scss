@@ -1,0 +1,33 @@
+@import "src/components/title/title";
+@import "src/components/input/input";
+@import "src/components/button/button";
+@import "src/components/link/linck";
+@import "src/components/error/error";
+@import "src/pages/Authorization/authorization";
+@import "src/pages/Registration/registration";
+@import "src/pages/Profile/profile";
+
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.form {
+  padding: 40px 80px;
+  border-radius: 10px;
+  box-shadow: 0 2px 9px 3px rgba(0, 0, 1, .14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
