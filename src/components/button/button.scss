@@ -1,16 +1,18 @@
+@import "../../style/colors";
+
 .button {
   height: 40px;
   width: 100%;
   border: none;
   border-radius: 8px;
-  background-color: #3369F3;
+  background-color: $blue-color;
   &:hover {
     cursor: pointer;
   }
 
   &__desc {
-    background-color: #3369F3;
-    color: #FFFFFF;
+    background-color: $blue-color;
+    color: $white-color;
     font-size: 15px;
     border: none;
     &:hover {

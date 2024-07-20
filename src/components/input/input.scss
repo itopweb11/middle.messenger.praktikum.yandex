@@ -1,10 +1,12 @@
+@import "../../style/colors";
+
 .inputForm {
   display: flex;
   flex-direction: column;
   gap: 5px;
 
   &__label {
-    color: #999999;
+    color: $text-gray-color;
     font-size: 13px;
   }
 
@@ -12,8 +14,8 @@
     border: none;
     outline: none;
     width: 280px;
-    border-bottom: 1px solid #3369F3;
-    color: #1E1E1E;
+    border-bottom: 1px solid $blue-color;
+    color: $text-color;
     font-size: 16px;
   }
 
