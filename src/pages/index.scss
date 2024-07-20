@@ -1,11 +1,11 @@
-@import "src/components/title/title";
-@import "src/components/input/input";
-@import "src/components/button/button";
-@import "src/components/link/linck";
-@import "src/components/error/error";
-@import "src/pages/Authorization/authorization";
-@import "src/pages/Registration/registration";
-@import "src/pages/Profile/profile";
+@import "../components/title/title";
+@import "../components/input/input";
+@import "../components/button/button";
+@import "../components/link/link";
+@import "../components/error/error";
+@import "../pages/Authorization/authorization";
+@import "../pages/Registration/registration";
+@import "../pages/Profile/profile";
 
 * {
   font-family: sans-serif;
@@ -20,7 +20,6 @@
   justify-content: center;
   align-items: center;
 }
-
 
 .form {
   padding: 40px 80px;

@@ -1,3 +1,5 @@
+@import "../../style/colors";
+
 .profile {
 
   &__form {
@@ -10,8 +12,8 @@
       width: 130px;
       height: 130px;
       border-radius: 50%;
-      border: 1px solid #EFEFEF;
-      background: #EFEFEF;
+      border: 1px solid $smoky-white-color;
+      background: $smoky-white-color;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -19,7 +21,7 @@
       &:hover {
         transition: 1s;
         cursor: pointer;
-        background: #353434;
+        background: $dark-charcoal-color;
 
         .profile__form__avatar__desc {
           opacity: 1;
@@ -28,7 +30,7 @@
 
       &__desc {
         text-align: center;
-        color: #FFFFFF;
+        color: $white-color;
         font-size: 13px;
         opacity: 0;
       }
@@ -50,19 +52,19 @@
         flex-direction: row;
         justify-content: space-between;
         margin-top: 20px;
-        border-bottom: 1px solid #3369F3;
+        border-bottom: 1px solid $blue-color;
         padding-bottom: 5px;
 
         input {
           border: none;
           text-align: end;
-          color: #999999;
+          color: $text-gray-color;
           font-size: 13px;
           flex: 1;
         }
 
         label {
-          color: #1E1E1E;
+          color: $text-color;
           font-size: 13px;
         }
       }
@@ -76,12 +78,12 @@
     gap: 20px;
 
     a:not(:last-child) {
-      border-bottom: 1px solid #EAEAEA;
+      border-bottom: 1px solid $gainsboro-color;
       padding-bottom: 5px;
     }
 
     a:last-child {
-      color: red;
+      color: $error-color;
     }
   }
 }
