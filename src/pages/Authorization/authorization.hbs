@@ -1,0 +1,11 @@
+<main class="authorization form">
+    {{> Title title="Вход" }}
+    <form class="registrationAuthorizationForm">
+        {{> Input type="text" name="login" value=login label="Логин" id="login_input" }}
+        {{> Input type="password" name="password" value=password label="Пароль" id="password_input" }}
+    </form>
+    <div class="authorization__buttons buttons">
+        {{> Button value="Авторизоваться" }}
+        {{> Link url='/registration' text="Нет аккаунта?" }}
+    </div>
+</main>

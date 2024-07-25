@@ -1,0 +1,89 @@
+@import "../../style/colors";
+
+.profile {
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__avatar {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 1px solid $smoky-white-color;
+      background: $smoky-white-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        transition: 1s;
+        cursor: pointer;
+        background: $dark-charcoal-color;
+
+        .profile__form__avatar__desc {
+          opacity: 1;
+        }
+      }
+
+      &__desc {
+        text-align: center;
+        color: $white-color;
+        font-size: 13px;
+        opacity: 0;
+      }
+    }
+
+    &__name {
+      margin-top: 20px;
+      color: #1E1E1E;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    &__inputs {
+      margin-top: 50px;
+
+      div {
+        width: 510px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
+        border-bottom: 1px solid $blue-color;
+        padding-bottom: 5px;
+
+        input {
+          border: none;
+          text-align: end;
+          color: $text-gray-color;
+          font-size: 13px;
+          flex: 1;
+        }
+
+        label {
+          color: $text-color;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    a:not(:last-child) {
+      border-bottom: 1px solid $gainsboro-color;
+      padding-bottom: 5px;
+    }
+
+    a:last-child {
+      color: $error-color;
+    }
+  }
+}

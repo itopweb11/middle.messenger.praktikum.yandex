@@ -1,0 +1,25 @@
+@import "../../style/colors";
+
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &__label {
+    color: $text-gray-color;
+    font-size: 13px;
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    width: 280px;
+    border-bottom: 1px solid $blue-color;
+    color: $text-color;
+    font-size: 16px;
+  }
+
+  .profileAvatarInput {
+
+  }
+}

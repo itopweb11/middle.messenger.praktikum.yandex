@@ -1,0 +1,21 @@
+<main class="profile">
+    <form class="profile__form">
+        <div class="profile__form__avatar">
+            <p class="profile__form__avatar__desc">Поменять <br> аватар</p>
+        </div>
+        <span class="profile__form__name">{{display_name}}</span>
+        <div class="profile__form__inputs">
+            {{> Input type="text" name="email" value=email label="Почта" id="email_input" }}
+            {{> Input type="text" name="login" value=login label="Логин" id="login_input" }}
+            {{> Input type="text" name="first_name" value=first_name label="Имя" id="first_name_input" }}
+            {{> Input type="text" name="second_name" value=second_name label="Фамилия" id="second_name_input" }}
+            {{> Input type="text" name="display_name" value=display_name label="Имя в чате" id="display_name_input" }}
+            {{> Input type="text" name="phone" value=phone label="Телефон" id="phone_input" }}
+        </div>
+    </form>
+    <div class="profile__buttons">
+        {{> Link url='' text="Изменить данные" }}
+        {{> Link url='' text="Изменить пароль" }}
+        {{> Link url='/' text="Выйти" }}
+    </div>
+</main>
