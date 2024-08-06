@@ -1,0 +1,62 @@
+.message {
+    border: 1px solid var(--text-gray-color);
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
+    width: auto;
+    float:left;
+    max-width: 50%;
+    height: auto;
+    border-radius: 15px;
+    min-width: 200px;
+
+    &.message-my {
+        border-radius:15px 15px 0;
+        background-color: #E4EDFD;
+        border: 1px solid #E4EDFD;
+        min-width: 200px;
+        float:right;
+        max-width: 50%;
+
+        .messageTime {
+            background-color: transparent;
+            position: relative;
+
+            span {
+                color: var(--blue);
+            }
+
+            &::before {
+                content: "";
+                background-image: url("../../img-icons/icons/Group 198.svg");
+                width: 10px;
+                height: 5px;
+                position: absolute;
+                top: 8px;
+                left: -9px;
+            }
+        }
+    }
+
+    &__file {
+        width: auto;
+        height: 95%;
+        padding: 11px;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+
+        }
+    }
+
+    &__text {
+        background-color:transparent;
+        padding: 11px;
+
+    }
+
+    &__time {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+

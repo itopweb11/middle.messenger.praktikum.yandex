@@ -1,72 +1,65 @@
-import Handlebars from 'handlebars'
-import {Input} from '../../components/input/input.ts'
-import {Title} from '../../components/title/title.ts'
-import {Button} from '../../components/button/button.ts'
-import {Link} from '../../components/link/link.ts'
+import {IProps,Block} from "../../helpers/Block.ts";
 
-import RegistrationForm from './registration.hbs?raw'
-
-enum RegistrationInputIds {
-    first_name = "#first_name_input",
-    surname = "#surname_input",
-    login = "#login_input",
-    email = "#email_input",
-    phone = "#phone_input",
-    password = "#password_input",
-    re_password = "#re_password_input",
+export interface IPageRegistrationProps extends IProps {
+    onLogin:(event:Event)=>void,
 }
+export class PageRegistration extends Block {
+    constructor() {
+        const props:IPageRegistrationProps={
+            events:{},
+            onLogin:  (event: Event) => {
+                event.preventDefault();
+                const login = this.refs.form.getRefs()?.login.value();
+                const email = this.refs.form.getRefs()?.email.value();
+                const phone = this.refs.form.getRefs()?.phone.value();
+                const first_name = this.refs.form.getRefs()?.first_name.value();
+                const second_name = this.refs.form.getRefs()?.second_name.value();
+                const password = this.refs.form.getRefs()?.password.value();
+                const password2 = this.refs.form.getRefs()?.password2.value();
 
-interface Registration {
-    first_name: string,
-    surname: string,
-    login: string,
-    email: string,
-    phone: string,
-    password: string,
-    re_password: string,
+                console.log({
+                    login,
+                    password,
+                    password2,
+                    second_name,
+                    first_name,
+                    phone,
+                    email,
+                    props
+                })
+            }
+        }
+
+        super(props);
+
+    }
+
+    getChildren() {
+        return (
+            `{{{ InputShort label='Почта' type='email' name='email' validate=validate.email ref='email' }}}
+            {{{ InputShort label='Логин' type='text' name='login' validate=validate.login ref='login' }}}
+            {{{ InputShort label='Имя' type='first_name' name='first_name' validate=validate.name ref='first_name' }}}
+            {{{ InputShort label='Фамилия' name='second_name' validate=validate.name ref='second_name' }}}
+            {{{ InputShort label='Телефон'  name='phone' validate=validate.phone ref='phone' }}}
+            {{{ InputShort label='Пароль' type='password' name='password' validate=validate.password ref='password' }}}
+            {{{ InputShort label='Пароль (ещё раз)' type='password' name='password2' validate=validate.password ref='password2' }}}`
+        )
+    }
+
+    protected render(): string {
+
+        return (`
+            <form class="container container-center">
+                {{{ FormAccess 
+                desc="Регистрация" 
+                descOk="Зарегистрироваться" 
+                descCancel="Войти" 
+                pageOk="allPages" 
+                pageCancel="loginPage" 
+                clickButton=onLogin 
+                children="${this.getChildren()}" 
+                ref="form" 
+                }}}
+            </form>`)
+    }
 }
-
-const registrationForm: Registration = {
-    first_name: "",
-    surname: "",
-    login: "",
-    email: "",
-    phone: "",
-    password: "",
-    re_password: "",
-}
-
-const inputRegistrationField = function (e: Event, field: keyof typeof registrationForm) {
-    console.log(field, (e.target as HTMLInputElement)?.value)
-    registrationForm[field] = (e.target as HTMLInputElement)?.value
-}
-
-Handlebars.registerPartial('Input', Input);
-Handlebars.registerPartial('Title', Title);
-Handlebars.registerPartial('Button', Button);
-Handlebars.registerPartial('Link', Link);
-
-
-const template = Handlebars.compile(RegistrationForm)
-
-const registrationFormEl = (thisRegistration: Registration) => template(thisRegistration)
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = registrationFormEl({...registrationForm})
-
-const inputLogin = document.querySelector<HTMLDivElement>(RegistrationInputIds.login)
-const inputPassword = document.querySelector<HTMLDivElement>(RegistrationInputIds.password)
-const inputEmail = document.querySelector<HTMLDivElement>(RegistrationInputIds.email)
-const inputFirstName = document.querySelector<HTMLDivElement>(RegistrationInputIds.first_name)
-const inputSecondName = document.querySelector<HTMLDivElement>(RegistrationInputIds.surname)
-const inputPhone = document.querySelector<HTMLDivElement>(RegistrationInputIds.phone)
-const inputRePassword = document.querySelector<HTMLDivElement>(RegistrationInputIds.re_password)
-
-inputLogin?.addEventListener('input', (e) => inputRegistrationField(e, 'login'))
-inputPassword?.addEventListener('input', (e) => inputRegistrationField(e, 'password'))
-inputEmail?.addEventListener('input', (e) => inputRegistrationField(e, 'email'))
-inputFirstName?.addEventListener('input', (e) => inputRegistrationField(e, 'first_name'))
-inputSecondName?.addEventListener('input', (e) => inputRegistrationField(e, 'surname'))
-inputPhone?.addEventListener('input', (e) => inputRegistrationField(e, 'phone'))
-inputRePassword?.addEventListener('input', (e) => inputRegistrationField(e, 're_password'))
-
-export default registrationFormEl
