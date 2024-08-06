@@ -19,7 +19,8 @@
     "noEmit": true,
 
     "strict": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   },
+
   "include": ["src"]
 }
