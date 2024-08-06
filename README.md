@@ -32,4 +32,3 @@
 - TS 
 - stylelint 
 - eslint
-- 
