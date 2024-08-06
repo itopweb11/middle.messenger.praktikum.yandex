@@ -43,3 +43,4 @@ export class ChatSidebar extends Block {
         `)
     }
 }
+
