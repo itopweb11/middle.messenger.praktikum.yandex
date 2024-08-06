@@ -1,0 +1,21 @@
+.chatSidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 100%;
+    border-right: 1px solid var(--text-gray-color);
+
+
+    &__header {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__search {
+        border-bottom: 1px solid var(--text-gray-color);
+        padding: 10px 0;
+        margin-bottom: 10px;
+    }
+
+}
+

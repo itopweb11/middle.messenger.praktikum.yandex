@@ -1,20 +1,14 @@
-import Handlebars from 'handlebars';
-import {Link} from '../../components/link/link.ts';
-import {Error} from '../../components/error/error.ts'
+import {Block} from "../../helpers/Block.ts";
 
-Handlebars.registerPartial('Link', Link);
+export class Page500 extends Block {
+    constructor() {
+        super({events:{}});
+    }
 
-const template = Handlebars.compile(Error);
-
-const error_500 = () => {
-    const context = {
-        code: 500,
-        text: 'Мы уже фиксим'
-    };
-
-    return template(context);
-};
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = error_500();
-
-export default error_500;
+    protected render(): string {
+        return (`
+            <div class="container container-center">
+                {{{ Error errorNumber="500" errorText="Мы уже фиксим" page="pageChat" }}}
+            </div>`)
+    }
+}

@@ -20,9 +20,15 @@
 
 ## Доступные страницы
 - Главная - http://localhost:3000,
-- Авторизация - http://localhost:3000/authorization
-- Регистрация - http://localhost:3000/registration
-- Профиль - http://localhost:3000/profile
-- Чат - http://localhost:3000/chat
-- 404 - http://localhost:3000/404
-- 500 - http://localhost:3000/500
+- Авторизация - http://localhost:3000
+- Регистрация - http://localhost:3000
+- Профиль - http://localhost:3000
+- Чат - http://localhost:3000
+- 404 - http://localhost:3000
+- 500 - http://localhost:3000
+
+
+## Доавил
+- TS 
+- stylelint 
+- eslint

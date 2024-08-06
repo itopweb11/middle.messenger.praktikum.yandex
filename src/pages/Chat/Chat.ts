@@ -1,18 +1,38 @@
-import Handlebars from 'handlebars';
-import {Link} from '../../components/link/link.ts';
-import Chat from './chat.hbs?raw'
+import {IProps,Block} from "../../helpers/Block.ts";
+import {mockUser} from "../../testData/user-testData.ts";
+import {mockListChats} from "../../testData/chat-testData.ts";
+import {mockListMessages} from "../../testData/chat-message-testData.ts";
+import {IChat} from "../../modalTypes/modalTypes.ts";
+import {IUser} from "../../modalTypes/modalTypes.ts";
+import {IChatMessage} from "../../modalTypes/modalTypes.ts";
 
-Handlebars.registerPartial('Link', Link);
+export interface IPageChatProps extends IProps {
+    messageList:IChatMessage[],
+    chatSidebar:IChat[],
+    currentUser:IUser,
+}
+export class PageChat extends Block {
 
-const template = Handlebars.compile(Chat);
+    constructor() {
+        const props:IPageChatProps={
+            currentUser:mockUser,
+            chatSidebar:mockListChats,
+            messageList:mockListMessages,
+            events:{}
+        }
+        super(props);
+    }
 
-const chat = () => {
-    const context = {
-        text: 'Страница не найдена...'
-    };
-    return template(context);
-};
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = chat();
-
-export default chat;
+    protected render(): string {
+        return (`
+           <div class="chatPage">
+                <div class="chatPage__left">
+                    {{{ ChatSidebar list=chatSidebar }}}
+                </div>
+                <div class="chatPage__main">
+                    {{{ MessagePanel messageList=messageList currentUser=currentUser }}}
+                </div>
+            </div>
+        `)
+    }
+}

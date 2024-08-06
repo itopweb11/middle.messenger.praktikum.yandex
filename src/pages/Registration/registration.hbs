@@ -1,16 +1,19 @@
-<main class="registration form">
-    {{> Title title="Регистрация" }}
-    <form class="registrationAuthorizationForm">
-        {{> Input type="text" name="first_name" value=first_name label="Имя" id="first_name_input" }}
-        {{> Input type="text" name="second_name" value=second_name label="Фамилия" id="surname_input" }}
-        {{> Input type="text" name="login" value=login label="Логин" id="login_input" }}
-        {{> Input type="email" name="email" value=email label="Почта" id="email_input" }}
-        {{> Input type="email" name="phone" value=phone label="Телефон" id="phone_input" }}
-        {{> Input type="password" name="password" value=password label="Пароль" id="password_input" }}
-        {{> Input type="password" name="re_password" value=password label="Повторите пароль" id="re_password_input" }}
-    </form>
-    <div class="registration__buttons buttons">
-        {{> Button value="Зарегистрироваться" }}
-        {{> Link url='/authorization' text="Есть аккаунт?" }}
-    </div>
-</main>
+<form class="container container-center">
+    {{#>
+    FormAccess
+            desc='Регистрация'
+            FormText='Зарегистрироваться'
+            repealText='Login'
+            chatPage='pageChat'
+            repealPage='loginPage'
+    }}
+        {{>Input label="Почта" type="email" name="email" }}
+        {{>Input label="Логин" type="text" name="login"}}
+        {{>Input label="Имя" type="text" name="first_name" }}
+        {{>Input label="Фамилия" type="text" name="second_name"}}
+        {{>Input label="Телефон" type="text" name="phone"}}
+        {{>Input label="Пароль" type="password" name="password"}}
+        {{>Input label="Пароль (ещё раз)" type="password" name="password2"}}
+    {{/FormAccess}}
+</form>
+

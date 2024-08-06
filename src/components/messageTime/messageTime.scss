@@ -1,0 +1,36 @@
+.messageTime {
+    border: none;
+    border-radius: 20px;
+    max-width: 45px;
+    padding: 1px 6px;
+    max-height: 20px;
+    width: auto;
+    cursor: pointer;
+    background: transparent;
+
+
+    span {
+        color: var(--text-plash-color);
+        text-align: center;
+        font-size: 12px;
+    }
+
+    &.messageTime-initial {
+        background: var(--text-gray-color);
+
+        span {
+            color: var(--text-plash-color);
+        }
+    }
+
+    &.messageTime-prepared {
+        span {
+            color: var(--red);
+        }
+    }
+
+}
+
+
+
+

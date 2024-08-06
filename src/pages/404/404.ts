@@ -1,21 +1,15 @@
-import Handlebars from 'handlebars';
-import {Link} from '../../components/link/link.ts';
+import {Block} from "../../helpers/Block.ts";
 
-import {Error} from '../../components/error/error.ts'
+export class Page404 extends Block {
+    constructor() {
+        super({events:{}});
+    }
 
-Handlebars.registerPartial('Link', Link);
-
-const template = Handlebars.compile(Error);
-
-const error_404 = () => {
-    const context = {
-        code: 404,
-        text: 'Не туда попали'
-    };
-
-    return template(context);
-};
-
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = error_404();
-
-export default error_404;
+    protected render(): string {
+        return (`
+            <div class="container container-center">
+                {{{ Error errorNumber="404" errorText="Не туда попали" page="pageChat" }}
+            </div>`
+        )
+    }
+}
