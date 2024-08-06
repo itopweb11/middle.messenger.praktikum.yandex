@@ -1,0 +1,61 @@
+.inputBig {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 40px;
+        width: 510px;
+        border-bottom: 1px solid var(--text-gray-color);
+        padding:5px 0;
+    }
+
+    &__container-noline{
+        border-bottom:none;
+    }
+
+    &__label {
+        color: var(--black-color);
+        font-weight: 500;
+        user-select: none;
+        min-width: auto;
+    }
+
+    &__value {
+        border: none;
+        color: var(--text-plash-color);
+        text-align: end;
+        max-width: 50%;
+
+        &:focus-visible {
+            outline: none;
+        }
+
+    }
+
+    &__text{
+        color: var(--text-plash-color);
+        display: block;
+    }
+
+    &__text-error {
+        color: var(--red);
+        font-size: 11px;
+        font-weight: 400;
+        text-align: end;
+        margin-top:5px;
+    }
+
+    .input__value-error {
+        color: var(--red);
+    }
+
+    .input__value-disabled{
+        display: none;
+    }
+}
+
+
+
+
+
+

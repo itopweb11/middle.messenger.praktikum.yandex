@@ -1,6 +1,8 @@
-<main class="error">
-    <div class="errorInfo">
-        <h1 class="errorTitle">{{text}}</h1>
+<div class="chatPage">
+    <div class="chatPage__left">
+        {{>ChatSidebar list=chatSidebar}}
     </div>
-    {{> Link url='/' text="На главную" }}
-</main>
+    <div class="chatPage__main">
+        {{>MessagePanel messageList=messageList currentUser=currentUser}}
+    </div>
+</div>

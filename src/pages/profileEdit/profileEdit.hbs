@@ -1,0 +1,10 @@
+<form class="container">
+    {{#> FormProfile withButton=true button-text="Сохранить" button-page="pageProfile" user=user}}
+        {{>InputProfile label="Почта" type="text" name="email" value=email }}
+        {{>InputProfile label="Логин" type="text" name="login" value=login }}
+        {{>InputProfile label="Имя" type="text" name="first_name" value=first_name }}
+        {{>InputProfile label="Фамилия" type="text" name="second_name" value=second_name }}
+        {{>InputProfile label="Имя в чате" type="text" name="display_name" value=nameInChat }}
+        {{>InputProfile label="Телефон" type="text" name="phone" value=phone }}
+    {{/FormProfile}}
+</form>

@@ -1,0 +1,15 @@
+<form class="container container-center">
+    {{#>
+    FormAccess
+            desc='Login'
+            FormText='войти'
+            repealText='Register'
+            chatPage='pageChat'
+            repealPage='pageRegistration'
+    }}
+        <div>
+            {{>Input label="Login" type="text" name="login" value='' }}
+            {{>Input label="Password" type="password" name="password" value=''  }}
+        </div>
+    {{/FormAccess}}
+</form>
