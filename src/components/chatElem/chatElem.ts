@@ -23,13 +23,13 @@ export class ChatElem extends Block {
                     <div class="chatElem__desc__name">
                         ${chat.title}
                     </div>
-                    <div class="chatElem__desc__time">
-                        ${chat.last_message.time}
-                    </div>
+                    
+                    
+                    
                 </div>
                 <div class="chatElem__message">
                     <div class="chatElem__message__content">
-                        <p> ${chat.last_message.content}</p>
+                        
                     </div>
                     {{{ Button type="number" desc=${chat.unread_count}}}}
                 </div>
@@ -39,3 +39,13 @@ export class ChatElem extends Block {
     }
 }
 
+
+/*
+<div class="chatElem__desc__time">
+    ${chat.last_message.time}
+</div>
+
+
+
+<p> ${chat.last_message.content}</p>
+* */

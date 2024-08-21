@@ -22,10 +22,10 @@ export class ModalAvatar extends Block {
         props.okClick = async () => {
             if(this.props.type==='chat') {
                 //error
-                const chat = window.store.getState().chats?.find((item: { id: string }) => item.id === window.store.getState().currentChat?.id);                if(chat){
+                /*const chat = window.store.getState().chats?.find((item: { id: string }) => item.id === window.store.getState().currentChat?.id);                if(chat){
                     chat.avatar=window.store.getState().currentChat?.avatar;
                     window.store.set({chats:window.store.getState().chats});
-                }
+                }*/
             }
             modalController.closeModal();
         }

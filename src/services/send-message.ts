@@ -2,7 +2,6 @@ import {IChat} from "../modalTypes/modalTypes.ts";
 import {BASE_SOCKET_CHAT} from "../config.ts";
 import {IUser} from "../modalTypes/modalTypes.ts";
 import SocketIO from "../api/socket.ts";
-import {showAlert} from "../utils/api.utils.ts";
 
 export const openConnectMessages = (chat: IChat, currentUser: IUser) => {
     if (!chat.id) return;
@@ -23,7 +22,7 @@ export const openConnectMessages = (chat: IChat, currentUser: IUser) => {
             message = JSON.parse(event.data);
         }
         catch (e){
-            showAlert('Unknown message!')
+            console.log('error', e)
         }
         if(!message)return;
         if (message.type === 'message' || Array.isArray(message)||message.type === 'file') {
@@ -34,12 +33,11 @@ export const openConnectMessages = (chat: IChat, currentUser: IUser) => {
             } else chat.messages.push(message);
             if (chat.id === window.store.getState().currentChat?.id) window.store.set({currentChat:chat});
             else {
-                //error
-                /*const foundedChat = window.store.getState().chats?.find(_chat => _chat.id === chat.id);
+                const foundedChat = window.store.getState().chats?.find(_chat => _chat.id === chat.id);
                 if (foundedChat) {
                     foundedChat.unread_count += 1;
                     window.store.set({chats: window.store.getState().chats});
-                }*/
+                }
             }
             const element = document.querySelector('.scroll-bottom');
             if (element)

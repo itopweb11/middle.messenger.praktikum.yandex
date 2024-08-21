@@ -1,8 +1,8 @@
 import UserSettingsApi from "../api/user-settings.ts";
-import {IPasswords, IUser} from "../models/IUser.ts";
+import {IPasswords, IUser} from "../modalTypes/modalTypes.ts";
 import {responseHasError} from "../utils/api.utils.ts";
 import {setStateUser} from "./app.ts";
-import Router from "../core/router.ts";
+import Router from "../helpers/router.ts";
 
 
 const userApi=new UserSettingsApi('/user');
