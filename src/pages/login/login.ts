@@ -32,3 +32,17 @@ export class LoginPage extends Block {
             </form>`)
     }
 }
+
+
+const socket = new WebSocket('wss://ws.postman-echo.com/raw')
+
+
+socket.addEventListener('message', function(event) {
+    console.log('Сообщение от сервера:', event.data)
+})
+
+// Дождитесь появления в консоли сообщения об установке соединения
+if (socket.readyState === 1) {
+    socket.send('Привет, сервер!')
+}
+
