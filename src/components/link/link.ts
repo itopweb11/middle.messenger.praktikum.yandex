@@ -13,7 +13,7 @@ export class Link extends Block {
     constructor(props: ILinkProps) {super(props);}
     public get props(){return this._props as ILinkProps;}
     protected render(): string {
-        const { href='#', desc='', page='' ,linkIcon=false,linkLine=false,type=''} = this.props;
+        const { href='messenger/settings', desc='', page='' ,linkIcon=false,linkLine=false,type=''} = this.props;
         const classLink=`link ${type?`link-${type}`:''} ${linkLine?'link-line':''}`
         return (`
             <a href= ${href} class="${classLink}"

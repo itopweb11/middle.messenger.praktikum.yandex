@@ -41,7 +41,7 @@ const router = new Router(".app");
 initialStateApp();
 
 // Настройка маршрутов для приложения
-router.use(BASE_URLS['page-default'], Pages.PageChat) // Установка маршрута по умолчанию
+router.use(BASE_URLS['page-default'], Pages.LoginPage) // Установка маршрута по умолчанию
     .use(BASE_URLS['page-login'], Pages.LoginPage) // Установка маршрута для страницы логина
     .use(BASE_URLS['page-sign-up'], Pages.PageRegistration) // Установка маршрута для страницы регистрации
     .use(BASE_URLS['page-profile'], Pages.PageProfile) // Установка маршрута для страницы профиля
