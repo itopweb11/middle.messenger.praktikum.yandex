@@ -1,6 +1,6 @@
 .chatElem {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 4px 10px;
     border-bottom: 1px solid var(--text-gray-color);
@@ -18,8 +18,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        max-width: 50px;
         width: 100%;
-        min-width: 50px;
     }
 
     &__desc {

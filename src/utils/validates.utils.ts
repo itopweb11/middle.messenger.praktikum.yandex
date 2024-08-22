@@ -16,7 +16,7 @@ export const validateLogin = (value: string) => {
 }
 
 export const validatePassword = (value: string) => {
-    if (value.length === 0) return `Password can not be blank`;
+    if (value.length === 0) return `Пароль не может быть пустым`;
     if (value.length < 8) {
         return 'Пароль должен содержать минимум 8 символов.'
     }

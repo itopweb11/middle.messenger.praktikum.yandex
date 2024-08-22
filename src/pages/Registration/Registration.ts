@@ -1,4 +1,4 @@
-import {IProps,Block} from "../../helpers/Block.ts";
+/*import {IProps,Block} from "../../helpers/Block.ts";
 import {BASE_URLS} from "../../config.ts";
 
 
@@ -65,16 +65,14 @@ export class PageRegistration extends Block {
                 }}}
             </form>`)
     }
-}
+}*/
 
 
-/*
-import {IProps, Block} from "../../core/block.ts";
+import {IProps, Block} from "../../helpers/Block.ts";
 import {signUp} from "../../services/auth.ts";
-import {IUser} from "../../models/IUser.ts";
+import {IUser} from "../../modalTypes/modalTypes.ts";
 import {BASE_URLS} from "../../config.ts";
-import {showAlert} from "../../utils/api.utils.ts";
-import Router from "../../core/router.ts";
+import Router from "../../helpers/router.ts";
 
 export interface IPageRegistrationProps extends IProps {
     onLogin: (event: Event) => void,
@@ -92,7 +90,7 @@ export class PageRegistration extends Block {
             const password = this.refs.form.getRefs()?.password.value();
             const password2 = this.refs.form.getRefs()?.password2.value();
             if (password !== password2) {
-                showAlert('Repeat passwords correct!');
+                alert('Повторите правильный пароль!');
                 return;
             }
             const data = {
@@ -106,7 +104,7 @@ export class PageRegistration extends Block {
             if (Object.values(data).findIndex(value => value === '') === -1) {
                 signUp(data)
                     .then(() => Router.getRouter().go(BASE_URLS['page-chat']))
-                    .catch((error) => console.warn('login', error));
+                    .catch((error) => console.warn('Зарегистрироваться', error));
 
             }
 
@@ -126,13 +124,13 @@ export class PageRegistration extends Block {
 
     getChildren() {
         return (
-            `{{{ InputShort label='Email' type='email' name='email' validate=validate.email ref='email' }}}
-            {{{ InputShort label='Login' type='text' name='login' validate=validate.login ref='login' }}}
-            {{{ InputShort label='First Name' type='first_name' name='first_name' validate=validate.name ref='first_name' }}}
-            {{{ InputShort label='Second Name' name='second_name' validate=validate.name ref='second_name' }}}
-            {{{ InputShort label='Phone'  name='phone' validate=validate.phone ref='phone' }}}
-            {{{ InputShort label='Password' type='password' name='password' validate=validate.password ref='password' }}}
-            {{{ InputShort label='Password (2nd time)' type='password' name='password2' validate=validate.password ref='password2' }}}`
+            `{{{ InputShort label='Почта' type='email' name='email' validate=validate.email ref='email' }}}
+            {{{ InputShort label='Логин' type='text' name='login' validate=validate.login ref='login' }}}
+            {{{ InputShort label='Имя' type='first_name' name='first_name' validate=validate.name ref='first_name' }}}
+            {{{ InputShort label='Фамилия' name='second_name' validate=validate.name ref='second_name' }}}
+            {{{ InputShort label='Телефон'  name='phone' validate=validate.phone ref='phone' }}}
+            {{{ InputShort label='Пароль' type='password' name='password' validate=validate.password ref='password' }}}
+            {{{ InputShort label='Пароль (ещё раз)' type='password' name='password2' validate=validate.password ref='password2' }}}`
         )
     }
 
@@ -140,19 +138,17 @@ export class PageRegistration extends Block {
 
         return (`
             <form class="container container-center">
-                {{{ FormAuth
-                    caption="Registration"
-                    captionOk="sign up"
-                    captionCancel="Cancel"
-                    pageOk="allPages"
-                    pageCancel="loginPage"
-                    onClickOkButton=onLogin
-                    children="${this.getChildren()}"
-                    ref="form"
-                    cancelLink="${BASE_URLS['page-login']}"
+                {{{ FormAccess 
+                desc="Регистрация" 
+                descOk="Зарегистрироваться" 
+                descCancel="Войти" 
+                pageOk="allPages" 
+                pageCancel="loginPage" 
+                clickButton=onLogin 
+                children="${this.getChildren()}" 
+                ref="form"
+                cancelLink="${BASE_URLS['page-login']}" 
                 }}}
             </form>`)
     }
 }
-
-* */
