@@ -8,6 +8,7 @@ interface IInputProfile extends IProps{
     type: 'text' | 'button',
     label: string,
     onBlur: () => void,
+    noLine: boolean,
     readOnlyMode: boolean,
     error:boolean ,
 }
@@ -26,7 +27,7 @@ export class InputProfile extends Block {
     }
 
     private validate() {
-        console.log(this)
+        console.log(this, 'IInputProfile this')
         const value = this.refs?.input?.value();
         const error = this.props.validate(value);
 
@@ -51,6 +52,7 @@ export class InputProfile extends Block {
             value = '',
             label = "",
             error = false,
+            noLine = false,
             errorText = '',
             readOnlyMode = false,
         } = this.props;
@@ -58,13 +60,14 @@ export class InputProfile extends Block {
         return (`
             <div class="inputBig">
                 <label class="inputBig__container">
+                ${noLine ? `inputBig__container_noline` : ""}">
                     <div class="inputBig__label"><span>${label}</span></div>
                     ${readOnlyMode ? `<span class="inputBig__text">${value}</span>` : ""}
                      {{{ Input 
                             ref='input' 
                             type="${type}" 
-                            inputClass="inputBig__value ${error ? "input__value-error" : ""}
-                            ${readOnlyMode ? "input__value-disabled" : ""}" 
+                            classes="input-wide__value ${error ? "input__value-error" : ""}
+                                    ${readOnlyMode ? "input__value-disabled" : ""}" 
                             value='${value}'
                             placeholder=" " 
                             name="${name}"

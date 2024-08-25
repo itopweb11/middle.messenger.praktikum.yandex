@@ -1,0 +1,28 @@
+.menu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    z-index: 300;
+
+    &.menu-message{
+        top:-150%;
+        left:0;
+    }
+
+    &.menu-chat{
+        bottom:-150%;
+        right:0;
+    }
+
+    &.opened{
+        display: flex;
+    }
+
+    &.hide{
+        display: none;
+    }
+
+}

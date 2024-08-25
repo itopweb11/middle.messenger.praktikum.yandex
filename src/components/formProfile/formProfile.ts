@@ -1,7 +1,6 @@
 /*
 import {IProps,Block} from "../../helpers/Block";
 import {IUser} from "../../modalTypes/modalTypes.ts";
-import {ALL_VALIDATE_FIELDS, IValidateType} from "../../modalTypes/IValidateType.ts";
 
 interface IFormProfile extends IProps{
     user:IUser,
@@ -66,7 +65,7 @@ export class FormProfile extends Block {
 
 import {IProps, Block} from "../../helpers/Block.ts";
 import {IUser} from "../../modalTypes/modalTypes.ts";
-import {ALL_VALIDATE_FIELDS, IValidateType} from "../../modalTypes/IValidateType.ts";
+import {ALL_VALIDATE_FIELDS, IValidateType} from "../../modalTypes/modalTypes.ts";
 import {logOut} from "../../services/auth.ts";
 
 interface IFormProfile extends IProps {

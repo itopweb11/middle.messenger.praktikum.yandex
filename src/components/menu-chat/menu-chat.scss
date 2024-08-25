@@ -1,0 +1,19 @@
+.menu-message {
+    position: absolute;
+    top:-150%;
+    left:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    &.opened{
+        display: flex;
+    }
+
+    &.hide{
+        display: none;
+    }
+
+}

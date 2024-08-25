@@ -1,6 +1,5 @@
 /*
 import {IProps,Block} from "../../helpers/Block";
-import {ALL_VALIDATE_FIELDS, IValidateType} from "../../modalTypes/IValidateType.ts";
 
 interface IFormAccessProps extends IProps {
     desc: string,

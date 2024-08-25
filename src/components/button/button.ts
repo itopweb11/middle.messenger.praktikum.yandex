@@ -1,8 +1,9 @@
 import  {IProps,Block} from "../../helpers/Block";
 
 interface IButtonProps extends IProps{
-    type: 'pointer' |'cancel' | 'mark' | 'number' | 'clamp',
+    type: 'arrow' | 'dots' | 'paperclip' | 'cancel' | 'number' | 'close',
     onClick: () => void
+    isSubmit?: boolean,
     page: string,
     desc: string,
 }
@@ -16,9 +17,10 @@ export class Button extends Block {
     }
 
     protected render(): string {
-        const { type='', desc='', page='' } = this._props as IButtonProps;
+        const {isSubmit = false, type = '', desc = '', page = ''} = this._props as IButtonProps;
         return (`
-            <button class="button ${type?"button-"+type:""}" ${page ? `page="${page}"` : ''}> 
+            <button type='${isSubmit ? 'submit' : `button`}' class="button ${type ? "button-" + type : ""}" 
+            ${page ? `page="${page}"` : ''}> 
                 ${desc}
             </button>
         `)

@@ -1,0 +1,27 @@
+.alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    min-height: 100px;
+    z-index:1000;
+
+    .alert__message {
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    .alert__close {
+        position: absolute;
+        right: 0;
+        top:0;
+    }
+}
+
+.dialog-alert {
+    border: none;
+    width: 340px;
+    inset: 0;
+    position: fixed;
+    margin: auto;
+}

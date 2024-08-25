@@ -1,51 +1,64 @@
 import {IProps,Block} from "../../helpers/Block";
-import {IChat} from "../../modalTypes/modalTypes.ts";
+import {getShortDate} from "../../utils/date.utils.ts";
 
 export interface ChatElemProps extends IProps {
-    chat:IChat,
+    id: number;
+    title: string;
+    avatar: string|null;
+    unread_count: string|null;
+    last_message_content:string|null;
+    last_message_time:string|null;
+
+    onClick: (id:string) => void
 }
 
 export class ChatElem extends Block {
     constructor(props: ChatElemProps) {
-        super(props);
+        super({
+            ...props,
+            events: {
+                click: (e: Event) => {
+                    e.stopPropagation();
+                    props.onClick(String(this.props.id));
+                }
+            }
+        })
+    }
+
+    public get props() {
+        return this._props as ChatElemProps;
     }
 
     public renderForList=this.render;
     protected render(): string {
-        const { chat } = this._props as ChatElemProps;
+        const {id,
+            title,
+            avatar,
+            unread_count,
+            last_message_content,
+            last_message_time} = this._props as ChatElemProps;
         return (`
             <li class="chatElem">
                 <div class="chatElem__avatar">
-                  {{{ Avatar AvatarImg=${chat.avatar} AvatarLoading=false AvatarSize='sm' }}}
+                  {{{ Avatar imageUrl='${avatar||''}' isLoadAvatar=false size='sm' }}}
                 </div>
                 <div class="chatElem__info">
-                    <div class="chatElem__desc">
-                    <div class="chatElem__desc__name">
-                        ${chat.title}
+                    <div class="chatElem__desc__name" id='${id}'>
+                        ${title}
                     </div>
-                    
-                    
-                    
+                    ${last_message_time ? `<div class="chatElem__desc__time">
+                        ${ getShortDate(last_message_time)}
+                    </div>` : ``}
                 </div>
-                <div class="chatElem__message">
+                ${last_message_content ? ` <div class="chatElem__message">
                     <div class="chatElem__message__content">
-                        
+                        <p> ${last_message_content}</p>
                     </div>
-                    {{{ Button type="number" desc=${chat.unread_count}}}}
-                </div>
-                </div>
+                    ${unread_count ? `{{{ Button type="number" caption='${unread_count}' }}}` : ''}
+                </div>` : ` <div class="chatElem__message__content">
+                        <p> no messages</p>
+                    </div>`}
             </li>
         `)
     }
 }
-
-
-/*
-<div class="chatElem__desc__time">
-    ${chat.last_message.time}
-</div>
-
-
-
-<p> ${chat.last_message.content}</p>
-* */
