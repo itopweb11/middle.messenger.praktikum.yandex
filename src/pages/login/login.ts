@@ -127,9 +127,8 @@ export class LoginPage extends Block {
 
         // Определение дочерних элементов формы
         const children: string = `
-        {{{ InputShort label='Login' type='text' name='login' validate=validate.login ref='login' }}}
-        {{{ InputShort label='Password' type='password' name='password' validate=validate.password ref='password' }}}`;
-        console.log(BASE_URLS, 'BASE_URLS')
+        {{{ InputShort label='Логин' type='text' name='login' validate=validate.login ref='login' }}}
+        {{{ InputShort label='Пароль' type='password' name='password' validate=validate.password ref='password' }}}`;
         // Возвращаем HTML-код формы авторизации
         return (`
             <form class="container container-center">

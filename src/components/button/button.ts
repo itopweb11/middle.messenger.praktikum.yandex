@@ -14,6 +14,7 @@ export class Button extends Block {
             ...props,
             events: {click: props.onClick || (() => {})}
         })
+        console.log('aaaaaaaaaaaaaaa')
     }
 
     protected render(): string {

@@ -48,6 +48,7 @@ export class PageProfile extends Block {
 import {IProps, Block} from "../../helpers/Block.ts";
 import {IUser} from "../../modalTypes/modalTypes.ts";
 import {StoreEvents} from "../../helpers/store.ts";
+import {showAlert} from "../../utils/api.utils.ts";
 import {updateUserPassword, updateUserProfile} from "../../services/user-settings.ts";
 import Router from "../../helpers/router.ts";
 
@@ -95,6 +96,7 @@ export class PageProfile extends Block {
                 const newPassword = this.refs.form.getRefs()?.newPassword.value();
                 const repeatPassword = this.refs.form.getRefs()?.repeatPassword.value();
 
+                if (newPassword !== repeatPassword) showAlert('Repeat new password correct!');
                 if (oldPassword && newPassword && newPassword === repeatPassword) {
 
                     try {

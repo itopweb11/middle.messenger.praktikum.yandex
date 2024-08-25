@@ -19,7 +19,8 @@
     "noEmit": true,
 
     "strict": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "typeRoots": ["node_modules/@types", "models"]
   },
 
   "include": ["src"]

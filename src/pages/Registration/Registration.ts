@@ -72,6 +72,7 @@ import {IProps, Block} from "../../helpers/Block.ts";
 import {signUp} from "../../services/auth.ts";
 import {IUser} from "../../modalTypes/modalTypes.ts";
 import {BASE_URLS} from "../../config.ts";
+import {showAlert} from "../../utils/api.utils.ts";
 import Router from "../../helpers/router.ts";
 
 export interface IPageRegistrationProps extends IProps {
@@ -90,7 +91,7 @@ export class PageRegistration extends Block {
             const password = this.refs.form.getRefs()?.password.value();
             const password2 = this.refs.form.getRefs()?.password2.value();
             if (password !== password2) {
-                alert('Повторите правильный пароль!');
+                showAlert('Повторите правильный пароль!');
                 return;
             }
             const data = {

@@ -2,6 +2,8 @@ import {IChat} from "../modalTypes/modalTypes.ts";
 import {BASE_SOCKET_CHAT} from "../config.ts";
 import {IUser} from "../modalTypes/modalTypes.ts";
 import SocketIO from "../api/socket.ts";
+import {showAlert} from "../utils/api.utils.ts";
+
 
 export const openConnectMessages = (chat: IChat, currentUser: IUser) => {
     if (!chat.id) return;
@@ -22,7 +24,7 @@ export const openConnectMessages = (chat: IChat, currentUser: IUser) => {
             message = JSON.parse(event.data);
         }
         catch (e){
-            console.log('error', e)
+            showAlert('Unknown message!')
         }
         if(!message)return;
         if (message.type === 'message' || Array.isArray(message)||message.type === 'file') {
