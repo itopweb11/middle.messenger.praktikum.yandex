@@ -117,3 +117,5 @@ export const ALL_VALIDATE_FIELDS: IValidateType = {
     nameChat: validateNameChat, // Валидация имени чата
     displayName: validateDisplayName // Валидация отображаемого имени
 }
+
+
