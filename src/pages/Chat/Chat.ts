@@ -1,38 +1,21 @@
-import {IProps,Block} from "../../helpers/Block.ts";
-import {mockUser} from "../../testData/user-testData.ts";
-import {mockListChats} from "../../testData/chat-testData.ts";
-import {mockListMessages} from "../../testData/chat-message-testData.ts";
-import {IChat} from "../../modalTypes/modalTypes.ts";
-import {IUser} from "../../modalTypes/modalTypes.ts";
-import {IChatMessage} from "../../modalTypes/modalTypes.ts";
+import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 
-export interface IPageChatProps extends IProps {
-    messageList:IChatMessage[],
-    chatSidebar:IChat[],
-    currentUser:IUser,
-}
+// Класс PageChat, который наследует от класса Block
 export class PageChat extends Block {
-
+    // Конструктор класса
     constructor() {
-        const props:IPageChatProps={
-            currentUser:mockUser,
-            chatSidebar:mockListChats,
-            messageList:mockListMessages,
-            events:{}
-        }
-        super(props);
+        const props: IProps = { events: {} }; // Создаем объект свойств с пустым объектом событий
+        super(props); // Вызываем конструктор родительского класса с переданными свойствами
     }
 
+    // Метод для рендеринга содержимого страницы
     protected render(): string {
         return (`
-           <div class="chatPage">
-                <div class="chatPage__left">
-                    {{{ ChatSidebar list=chatSidebar }}}
-                </div>
-                <div class="chatPage__main">
-                    {{{ MessagePanel messageList=messageList currentUser=currentUser }}}
-                </div>
+           <div class="chatPage"> <!-- Контейнер для страницы чата -->
+                <div class="chatPage__left">{{{ ChatList }}}</div> <!-- Левая часть страницы для списка чатов -->
+                <div class="chatPage__main">{{{ MessageList }}}</div> <!-- Основная часть страницы для списка сообщений -->
             </div>
-        `)
+        `);
     }
 }
+

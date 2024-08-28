@@ -1,0 +1,41 @@
+.user-item {
+    border:1px solid var(--red);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:auto;
+    border-radius: 20px;
+
+
+
+
+    &__icon {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        padding: 1px;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &:hover{
+            opacity: 0.7;
+        }
+
+        &.user-item__icon_plus{
+            background-image: url("../../img-icons/icons/circle-plus.svg");
+        }
+
+        &.user-item__icon_delete{
+            background-image: url("../../img-icons/icons/circle-x.svg") ;
+        }
+    }
+
+    &__name{
+        margin-right:10px ;
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+
+

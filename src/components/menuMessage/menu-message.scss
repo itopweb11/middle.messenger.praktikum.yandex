@@ -1,0 +1,27 @@
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    padding: 10px;
+    z-index: 300;
+
+    &.menu-message{
+        left:0;
+        top:-150%;
+    }
+
+    &.menu-chat{
+        right:0;
+        bottom:-150%;
+    }
+
+    &.hide{
+        display: none;
+    }
+
+    &.opened{
+        display: flex;
+    }
+}

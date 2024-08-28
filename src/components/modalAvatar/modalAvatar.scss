@@ -1,0 +1,53 @@
+.modal-avatar{
+    padding: 22px 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 10;
+    border: 1px var(--white) solid;
+    border-radius: 20px;
+
+    &.highlight{
+        border-color:  var(--text-plash-color);
+    }
+
+    &__image{
+        height: 140px;
+        width: 140px;
+        border: 1px var(--blue) solid;
+        display: block;
+        border-radius: 50%;
+        transition: .7s ease;
+        backface-visibility: hidden;
+        opacity: 1;
+
+    }
+
+    &__empty{
+        height: 140px;
+        width: 140px;
+        background: url("../../img-icons/icons/image.svg") no-repeat center;
+        position: relative;
+        border: 1px var(--blue) solid;
+        border-radius: 100px;
+    }
+
+    &__label {
+        font-weight: bold;
+        margin-top:20px;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    &__input{
+        position: absolute;
+        width: 0.2px;
+        height: 0.2px;
+        opacity: 0;
+        z-index: -10;
+    }
+}

@@ -1,59 +1,57 @@
-import './style/main.scss';
+// Импортируем основные стили приложения
+import './styles/main.scss';
+// Импортируем все компоненты из директории components
 import * as Components from './components';
+// Импортируем все страницы из директории pages
 import * as Pages from './pages';
-import {registerComponent} from "./helpers/registerComponent.ts";
-import {Block} from "./helpers/Block.ts";
+// Импортируем функцию для регистрации компонентов
+import { registerComp } from "./helpers/registerComponents.ts";
+// Импортируем маршрутизатор
+import Router from "./helpers/router.ts";
+// Импортируем базовые URL-адреса из конфигурации
+import { BASE_URLS } from "./config.ts";
+// Импортируем функцию для инициализации состояния приложения
+import { stateApp } from "./services/app.ts";
+// Импортируем интерфейс состояния приложения
+import { IAppState } from "./modalTypes/modalTypes.ts";
+// Импортируем класс Store для управления состоянием приложения
+import { Store } from "./helpers/store.ts";
 
-const allComponents = {
-    'Input': Components.Input,
-    'FormAccess': Components.FormAccess,
-    'Link': Components.Link,
-    'Button': Components.Button,
-    'Avatar': Components.Avatar,
-    'ChatElem': Components.ChatElem,
-    'Error': Components.Error,
-    'FormProfile': Components.FormProfile,
-    'InputShort': Components.InputShort,
-    'Modal': Components.Modal,
-    'InputSearch': Components.InputSearch,
-    'Message': Components.Message,
-    'MessageTime': Components.MessageTime,
-    'InputProfile': Components.InputProfile,
-    'ChatSidebar': Components.ChatSidebar,
-    'MessagePanel': Components.MessagePanel,
+// Регистрируем все компоненты, перебирая их по именам и значениям
+Object.entries(Components).forEach(
+    ([componentName, component]) => registerComp(componentName, component) // Регистрируем каждый компонент
+)
+
+// Объявляем глобальные типы и интерфейсы
+declare global {
+    interface Window {store: Store<IAppState>} // Добавляем свойство store в интерфейс Window
+    type Nullable<T> = T | null; // Определяем тип Nullable, который может быть T или null
 }
-const pages:{[index: string]:{component:unknown}} = {
-    "pageRegistration": {component: Pages.PageRegistration},
-    "loginPage": {component: Pages.LoginPage},
-    "pageChat": {component: Pages.PageChat},
-    "pageProfile": {component: Pages.PageProfile},
-    "profileEdit": {component: Pages.ProfileEdit},
-    "passwordEdit": {component: Pages.PasswordEdit},
-    "page404": {component: Pages.Page404},
-    "page500": {component: Pages.Page500},
-};
 
-Object.entries(allComponents).forEach(([name, component]) => {
-    registerComponent(name, component);
-});
-
-const navigate = (page: string) => {
-    const App = document.getElementById('app');
-    const pageComponent = pages[page].component as unknown as typeof Block;
-    const comp = new pageComponent({events:{}});
-    const htmlElement = comp.getContent();
-    if (!App?.firstElementChild) App?.append(document.createElement('div'));
-    if(htmlElement)
-        App?.firstElementChild?.replaceWith(htmlElement);
+// Инициализируем начальное состояние приложения
+const initState: IAppState = {
+    chats: [], // Начальное значение для списка чатов
+    currentChat: null, // Начальное значение для текущего чата
+    user: undefined, // Начальное значение для пользователя
+    error: null, // Начальное значение для ошибок
 }
-document.addEventListener('DOMContentLoaded', () => navigate('loginPage'));
-document.addEventListener('click', (e: Event) => {
-    if (!e) return;
-    if(!e.target)return;
-    const page =(<HTMLDivElement> e.target).getAttribute('page');
-    if (page) {
-        navigate(page);
-        e.preventDefault();
-        e.stopImmediatePropagation();
-    }
-});
+
+// Создаем новое состояние хранилища и присваиваем его объекту window
+window.store = new Store<IAppState>(initState);
+
+// Создаем новый экземпляр маршрутизатора, указывая корневой элемент приложения
+const router = new Router(".app");
+// Инициализируем состояние приложения
+stateApp();
+
+// Настраиваем маршрутизацию, связывая URL-адреса с соответствующими страницами
+router
+    .use(BASE_URLS['page-login'], Pages.LoginPage) // Маршрут для страницы входа
+    .use(BASE_URLS['page-sign-up'], Pages.PageRegistration) // Маршрут для страницы регистрации
+    .use(BASE_URLS['page-profile'], Pages.PageProfile) // Маршрут для страницы профиля
+    .use(BASE_URLS['page-404'], Pages.Page404) // Маршрут для страницы 404 (не найдено)
+    .use(BASE_URLS['page-500'], Pages.Page500) // Маршрут для страницы 500 (внутренняя ошибка сервера)
+    .use(BASE_URLS['page-chat'], Pages.PageChat) // Маршрут для страницы чата
+    .start(); // Запускаем маршрутизатор
+
+

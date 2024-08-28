@@ -1,8 +1,15 @@
 <div class="chatPage">
     <div class="chatPage__left">
-        {{>ChatSidebar list=chatSidebar}}
+        {{>
+            ChatList
+            list=chatList
+        }}
     </div>
     <div class="chatPage__main">
-        {{>MessagePanel messageList=messageList currentUser=currentUser}}
+        {{>
+            MessageListFooter
+            messageList=messageList
+            currentUser=currentUser
+        }}
     </div>
 </div>

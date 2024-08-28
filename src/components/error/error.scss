@@ -1,19 +1,23 @@
 .error {
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
+  align-items: center;
 
   &__number{
-    color:var(--red);
     font-size:40px;
+    color:var(--red);
     font-weight:bold;
   }
 
   &__text{
-    color:var(--black-color);
-    font-size:18px;
     margin:20px;
     font-weight:bold;
+    font-size:18px;
+    color:var(--dark-charcoal-color);
   }
 }
+
+
+
+
