@@ -82,3 +82,5 @@ export const getAllNewMessage = (limit: number, chat: IChat | null) => {
         window.store.set({ currentChat: { ...chat } });
     }
 }
+
+
