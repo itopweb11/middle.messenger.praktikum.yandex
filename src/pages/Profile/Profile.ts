@@ -144,6 +144,9 @@ export class PageProfile extends Block {
             isEditPassword ? `clickButton=onChangePassword buttonText='Сохранить'` : ''
         }     
                 }}}
-            </form>`);
+             </form>`);
+
     }
-}
+}//sss
+
+

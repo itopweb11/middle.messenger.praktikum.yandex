@@ -80,6 +80,9 @@ export class PageRegistration extends Block {
                     ref="form"
                     cancelLink="${BASE_URLS['page-login']}"
                 }}}
-            </form>`)
+             </form>`)
+
     }
-}
+}//ssssss
+
+
