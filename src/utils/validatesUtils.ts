@@ -123,3 +123,4 @@ export const validateDisplayName = (value: string) => {
     // Если все проверки пройдены, возвращаем пустую строку
     return '';
 }
+
