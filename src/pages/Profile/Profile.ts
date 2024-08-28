@@ -1,4 +1,4 @@
-import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
+import { IProps, Block } from "../../helpers/Block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import { IUser } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс IUser
 import { StoreEvents } from "../../helpers/store.ts"; // Импортируем события хранилища
 import { UserPassword, UserProfile } from "../../services/userSettings.ts"; // Импортируем функции для обновления пароля и профиля пользователя

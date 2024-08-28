@@ -1,5 +1,5 @@
 import Handlebars from 'handlebars'; // Импортируем библиотеку Handlebars для работы с шаблонами
-import Block from "./block.ts"; // Импортируем класс Block, который будет использоваться для создания компонентов
+import Block from "./Block.ts"; // Импортируем класс Block, который будет использоваться для создания компонентов
 import { HelperOptions } from "handlebars"; // Импортируем тип HelperOptions из библиотеки Handlebars
 
 // Функция для регистрации компонента в Handlebars

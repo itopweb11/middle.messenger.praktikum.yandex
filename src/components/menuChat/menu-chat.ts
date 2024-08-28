@@ -1,4 +1,4 @@
-import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
+import { IProps, Block } from "../../helpers/Block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import { IChat } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс для чата
 import modalController from "../../helpers/modalController.ts"; // Импортируем контроллер модальных окон
 import { ModalAvatar, ModalChatUsers } from "../index.ts"; // Импортируем компоненты модальных окон для аватара и пользователей чата

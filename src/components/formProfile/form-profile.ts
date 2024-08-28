@@ -1,4 +1,4 @@
-import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
+import { IProps, Block } from "../../helpers/Block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import { IUser, ALL_VALIDATE_FIELDS, IValidateType } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс для пользователя
 import { logOut } from "../../services/auth.ts"; // Импортируем функцию для выхода из системы
 

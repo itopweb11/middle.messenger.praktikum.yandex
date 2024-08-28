@@ -1,4 +1,4 @@
-import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
+import { IProps, Block } from "../../helpers/Block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import modalController from "../../helpers/modalController.ts"; // Импортируем контроллер модальных окон
 
 // Интерфейс для свойств компонента ModalPrompt

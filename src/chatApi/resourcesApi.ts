@@ -1,4 +1,4 @@
-import HTTPPath from "../helpers/http.ts"; // Импортируем класс HTTPPath для выполнения HTTP-запросов
+import HTTPPath from "../helpers/Http.ts"; // Импортируем класс HTTPPath для выполнения HTTP-запросов
 
 export class ResourcesApi { // Класс для работы с API ресурсов
     private httpPath = new HTTPPath(); // Экземпляр класса HTTPPath для отправки HTTP-запросов

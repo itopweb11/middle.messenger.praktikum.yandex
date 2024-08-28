@@ -1,4 +1,4 @@
-import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
+import { IProps, Block } from "../../helpers/Block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import { UserAvatar, UserProfile } from "../../services/userSettings.ts"; // Импортируем функции для обновления аватара пользователя и профиля
 import { BASE_RESOURCES_URL } from "../../config.ts"; // Импортируем базовый URL для ресурсов
 import modalController from "../../helpers/modalController.ts"; // Импортируем контроллер модальных окон

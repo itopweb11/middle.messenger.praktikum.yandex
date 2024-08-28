@@ -1,4 +1,4 @@
-import { Block } from "../../helpers/block.ts"; // Импортируем класс Block из основной библиотеки
+import { Block } from "../../helpers/Block.ts"; // Импортируем класс Block из основной библиотеки
 
 export class Loader extends Block { // Класс Loader, наследующий от класса Block
     // Метод для рендеринга содержимого компонента

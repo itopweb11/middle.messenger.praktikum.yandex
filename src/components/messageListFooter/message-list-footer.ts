@@ -1,4 +1,4 @@
-import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
+import { IProps, Block } from "../../helpers/Block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import { IChatMessage, IUser, IChat } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс для сообщений чата
 import { validateMessage } from "../../utils/validatesUtils.ts"; // Импортируем функцию валидации сообщения
 import { sendMessage } from "../../services/sendMessage.ts"; // Импортируем функцию для отправки сообщения

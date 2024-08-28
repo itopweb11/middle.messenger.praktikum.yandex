@@ -1,4 +1,4 @@
-import Block, { IProps } from "./block.ts"; // Импортируем класс Block и интерфейс IProps из модуля block.ts
+import Block, { IProps } from "./Block.ts"; // Импортируем класс Block и интерфейс IProps из модуля block.ts
 
 class Route {
     private _pathname: string; // Хранит текущий путь маршрута

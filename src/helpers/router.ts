@@ -1,4 +1,4 @@
-import Block from "./block.ts"; // Импортируем класс Block для создания компонентов
+import Block from "./Block.ts"; // Импортируем класс Block для создания компонентов
 import Route from "./route.ts"; // Импортируем класс Route для управления маршрутами
 
 class Router {

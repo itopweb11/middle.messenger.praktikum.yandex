@@ -1,4 +1,4 @@
-import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
+import { IProps, Block } from "../../helpers/Block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import { IChat } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс для чата
 import { StoreEvents } from "../../helpers/store.ts"; // Импортируем события хранилища
 

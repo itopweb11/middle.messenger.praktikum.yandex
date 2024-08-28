@@ -1,4 +1,4 @@
-import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
+import { IProps, Block } from "../../helpers/Block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import Router from "../../helpers/router.ts"; // Импортируем класс Router для навигации по страницам
 
 // Интерфейс для свойств компонента Link

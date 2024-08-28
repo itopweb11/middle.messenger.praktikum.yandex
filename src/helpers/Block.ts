@@ -1,4 +1,4 @@
-import EventDispatcher from "./eventBus.ts"; // Импортируем класс EventDispatcher для управления событиями
+import EventDispatcher from "./EventBus.ts"; // Импортируем класс EventDispatcher для управления событиями
 import { v4 as uuidv4 } from 'uuid'; // Импортируем функцию для генерации уникальных идентификаторов
 import Handlebars from "handlebars"; // Импортируем Handlebars для компиляции шаблонов
 import { isDeepEqual } from "../utils/objectUtils.ts"; // Импортируем функцию для глубокого сравнения объектов
