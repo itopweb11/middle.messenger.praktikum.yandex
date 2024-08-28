@@ -1,0 +1,47 @@
+.profile {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &__avatar {
+        text-align: center;
+
+        &__name{
+            color:var(--black-color);
+            margin-top:15px ;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+
+    &__main{
+        margin: 80px 0;
+    }
+
+    &__buttons {
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+        align-self: end;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+}
+
+.block-cancel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 80px;
+    width: 80px;
+
+    &:hover{
+        opacity: 0.8;
+    }
+}

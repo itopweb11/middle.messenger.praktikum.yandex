@@ -1,0 +1,38 @@
+.badge {
+    width: auto;
+    max-width: 45px;
+    max-height: 20px;
+    border: none;
+    border-radius: 20px;
+    background: transparent;
+    padding: 1px 6px;
+    cursor: pointer;
+
+
+    span {
+        font-size: 12px;
+        text-align: center;
+        color: var(--text-plash-color);
+    }
+
+    &.badge-ready {
+        span {
+            color: var(--blue);
+        }
+
+    }
+
+    &.badge-primary {
+        background: var(--text-plash-color);
+
+        span {
+            color: var(--white);
+        }
+
+    }
+
+}
+
+
+
+

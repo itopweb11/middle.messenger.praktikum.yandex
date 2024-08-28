@@ -1,0 +1,53 @@
+.modal-avatar{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    padding: 22px 15px;
+    flex-direction: column;
+    align-items: center;
+    border: 1px var(--white) solid;
+    border-radius: 20px;
+
+    &.highlight{
+        border-color:  var(--text-plash-color);
+    }
+
+    &__image{
+        height: 140px;
+        width: 140px;
+        border: 1px var(--red) solid;
+        border-radius: 50%;
+        transition: .7s ease;
+        opacity: 1;
+        backface-visibility: hidden;
+        display: block;
+
+    }
+
+    &__empty{
+        width: 140px;
+        height: 140px;
+        position: relative;
+        background: url("../../img-icons/icons/image.svg") no-repeat center;
+        border: 1px var(--red) solid;
+        border-radius: 50%;
+    }
+
+    &r__label {
+        font-weight: bold;
+        margin-top:20px;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    &__input{
+        position: absolute;
+        z-index: -10;
+        opacity: 0;
+        width: 0.2px;
+        height: 0.2px;
+    }
+}
