@@ -55,3 +55,6 @@ export class ModalPrompt extends Block { // Класс ModalPrompt, наслед
         `);
     }
 }
+
+
+
