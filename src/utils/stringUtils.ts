@@ -78,3 +78,7 @@ export const valueToString = (key: string, value: unknown, result: string[]) => 
     // Добавляем строку в массив результата в формате "ключ=значение"
     result.push(`${key}=${String(value)}`);
 }
+
+
+
+
