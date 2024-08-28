@@ -1,18 +1,20 @@
-import {responseHasError} from "../utils/api.utils.ts";
-import ResourcesApi from "../api/resources.ts";
+import { responseHasError } from "../utils/apiUtils.ts"; // Импортируем утилиту для проверки ошибок в ответах API
+import ResourcesApi from "../chatApi/resourcesApi.ts"; // Импортируем класс для работы с API ресурсов
 
-
+// Создаем экземпляр ResourcesApi с базовым URL для ресурсов
 const resourcesApi = new ResourcesApi('/resources');
 
-const uploadResource = async (file:FormData) => {
+// Асинхронная функция для загрузки ресурса
+const uploadResource = async (file: FormData) => {
+    // Вызываем метод API для загрузки ресурса
     const result = await resourcesApi.uploadResource(file);
-    const error=responseHasError(result);
+    // Проверяем наличие ошибок в ответе
+    const error = responseHasError(result);
+    // Если есть ошибка, выбрасываем исключение
     if (error) throw Error(error);
-    if(!error)
-    return result.data;
-
+    // Если ошибок нет, возвращаем данные результата
+    if (!error) return result.data;
 }
 
-export {
-    uploadResource
-}
+// Экспортируем функцию для использования в других модулях
+export {uploadResource}

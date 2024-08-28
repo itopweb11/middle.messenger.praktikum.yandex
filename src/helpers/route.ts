@@ -1,55 +1,48 @@
-import Block, { IProps } from "./Block.ts"; // Импорт класса Block и интерфейса IProps
+import Block, { IProps } from "./block.ts"; // Импортируем класс Block и интерфейс IProps из модуля block.ts
 
-// Класс Route представляет собой маршрут в приложении
 class Route {
-    private _pathname: string; // Приватное свойство для хранения пути маршрута
-    private readonly _blockClass: typeof Block; // Приватное свойство для хранения класса блока, связанного с маршрутом
-    private _block: Block | null = null; // Приватное свойство для хранения экземпляра блока
-    private readonly _props: IProps; // Приватное свойство для хранения свойств блока
+    private _pathname: string; // Хранит текущий путь маршрута
+    private readonly _blockClass: typeof Block; // Хранит класс блока, который будет использоваться для данного маршрута
+    private _block: Block | null = null; // Хранит экземпляр блока (или null, если блок еще не создан)
+    private readonly _props: IProps; // Хранит свойства, переданные в блок
 
     // Конструктор класса Route
     constructor(pathname: string, view: typeof Block, props: object) {
-        this._pathname = pathname; // Инициализация пути маршрута
-        this._blockClass = view; // Инициализация класса блока
-        this._block = null; // Инициализация экземпляра блока как null
-        this._props = props; // Инициализация свойств блока
+        this._pathname = pathname; // Устанавливаем путь маршрута
+        this._blockClass = view; // Устанавливаем класс блока для данного маршрута
+        this._block = null; // Изначально блок не создан
+        this._props = props; // Устанавливаем свойства блока
     }
 
-    // Геттер для получения пути маршрута
-    public get pathname() {
-        return this._pathname;
-    }
+    // Геттер для получения текущего пути
+    public get pathname() {return this._pathname} // Возвращаем текущий путь
+
 
     // Метод для навигации по маршруту
     navigate(pathname: string) {
-        if (this.match(pathname)) { // Проверка, соответствует ли путь текущему маршруту
-            this._pathname = pathname; // Обновление пути маршрута
-            this.render(); // Рендеринг блока
+        // Проверяем, соответствует ли новый путь текущему маршруту
+        if (this.match(pathname)) {this._pathname = pathname; // Обновляем текущий путь
+            this.render(); // Вызываем метод рендеринга
         }
     }
 
-    // Метод для скрытия блока при переходе на другой маршрут
-    leave() {
-        if (this._block) {
-            this._block.hide(); // Скрытие блока
-        }
-    }
+    // Метод для скрытия блока при уходе с маршрута
+    leave() {if (this._block) {this._block.hide()}} // Скрываем блок, если он существует
+    // Метод для проверки соответствия пути
+    match(pathname: string) {return pathname === this._pathname} // Возвращаем true, если путь совпадает с текущим маршрутом
 
-    // Метод для проверки соответствия пути маршруту
-    match(pathname: string) {
-        return pathname === this._pathname; // Возвращает true, если пути совпадают
-    }
 
     // Метод для рендеринга блока
     render() {
-        if (!this._block) { // Если экземпляр блока не создан
-            this._block = new this._blockClass(this._props); // Создание нового экземпляра блока с заданными свойствами
-            this.render(); // Рекурсивный вызов метода render для отображения блока
-            return;
+        if (!this._block) { // Если блок еще не создан
+            this._block = new this._blockClass(this._props); // Создаем новый экземпляр блока с переданными свойствами
+            this.render(); // Рендерим блок (возможно, здесь ошибка, так как метод рендеринга может вызывать сам себя бесконечно)
+            return; // Выходим из метода
         }
-
-        this._block.show(); // Отображение блока
+        this._block.show(); // Если блок уже создан, показываем его
     }
 }
 
-export default Route; // Экспорт класса Route по умолчанию
+export default Route; // Экспортируем класс Route по умолчанию
+
+

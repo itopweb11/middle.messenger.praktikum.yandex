@@ -1,15 +1,23 @@
 <form class="container container-center">
-    {{#>
-    FormAccess
-            desc='Login'
-            FormText='войти'
-            repealText='Register'
-            chatPage='pageChat'
-            repealPage='pageRegistration'
-    }}
+    {{#> FormAuth
+            desc='Вход'
+            form-text='sign in'
+            cancel-text='Register'
+            form-page='pageChat'
+            cancel-page='pageRegistration'}}
         <div>
-            {{>Input label="Логин" type="text" name="login" value='' }}
-            {{>Input label="Пароль" type="password" name="password" value=''  }}
+            {{>Input
+                    label="Логин"
+                    type="text"
+                    name="login"
+                    value=''
+            }}
+            {{>Input
+                    label="Пароль"
+                    type="password"
+                    name="password"
+                    value=''
+            }}
         </div>
-    {{/FormAccess}}
+    {{/FormAuth}}
 </form>

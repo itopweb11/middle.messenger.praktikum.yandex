@@ -1,2 +1,2 @@
-export {PageProfile as default} from './Profile';
+export {PageProfile as default} from './profile';
 

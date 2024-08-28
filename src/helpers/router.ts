@@ -1,95 +1,74 @@
-import Block from "./Block.ts"; // Импорт класса Block для работы с компонентами
-import Route from "./route.ts"; // Импорт класса Route для управления маршрутами
+import Block from "./block.ts"; // Импортируем класс Block для создания компонентов
+import Route from "./route.ts"; // Импортируем класс Route для управления маршрутами
 
-// Класс Router отвечает за управление маршрутами в приложении
 class Router {
-    private static __instance: Router; // Статическое свойство для хранения единственного экземпляра Router
+    private static __instance: Router; // Статическая переменная для хранения единственного экземпляра класса (Singleton)
     private routes: Route[] | undefined; // Массив маршрутов
-    private history: History | undefined; // Объект History для управления историей навигации
+    private history: History | undefined; // История браузера
     private _currentRoute: null | Route = null; // Текущий маршрут
-    private _rootQuery: string | undefined; // Корневой селектор для рендеринга компонентов
+    private _rootQuery: string | undefined; // Корневой селектор для приложения
 
     // Конструктор класса Router
     constructor(rootQuery: string) {
-        if (Router.__instance) {
-            return Router.__instance; // Возвращаем существующий экземпляр, если он уже создан
-        }
-
-        this.routes = []; // Инициализация массива маршрутов
-        this.history = window.history; // Получение объекта History из окна
+        // Проверяем, существует ли уже экземпляр класса
+        if (Router.__instance) {return Router.__instance} // Если экземпляр существует, возвращаем его
+        this.routes = []; // Инициализируем массив маршрутов
+        this.history = window.history; // Получаем объект истории браузера
         this._currentRoute = null; // Изначально текущий маршрут равен null
-        this._rootQuery = rootQuery; // Установка корневого селектора
-
-        Router.__instance = this; // Сохранение текущего экземпляра
+        this._rootQuery = rootQuery; // Устанавливаем корневой селектор
+        Router.__instance = this; // Устанавливаем текущий экземпляр как единственный
     }
 
-    // Статический метод для получения экземпляра Router
-    public static getRouter() {
-        return this.__instance; // Возвращаем единственный экземпляр Router
-    }
+    // Статический метод для получения единственного экземпляра класса
+    public static getRouter() {return this.__instance} // Возвращаем экземпляр класса
 
-    // Геттер для получения пути текущего маршрута
-    public get currentRoute() {
-        return this._currentRoute?.pathname; // Возвращаем путь текущего маршрута
-    }
+    // Геттер для получения текущего пути маршрута
+    public get currentRoute() {return this._currentRoute?.pathname} // Возвращаем путь текущего маршрута
 
-    // Метод для добавления нового маршрута
+    // Метод для добавления маршрута
     use(pathname: string, block: typeof Block) {
-        const route = new Route(pathname, block, { rootQuery: this._rootQuery }); // Создание нового маршрута
-        this.routes?.push(route); // Добавление маршрута в массив
-        return this; // Возвращаем текущий экземпляр Router для цепочного вызова
+        const route = new Route(pathname, block, { rootQuery: this._rootQuery }); // Создаем новый маршрут
+        this.routes?.push(route); // Добавляем маршрут в массив
+        return this; // Возвращаем текущий экземпляр для цепочки вызовов
     }
 
     // Метод для запуска маршрутизатора
     start() {
-        // Обработчик события для изменения маршрута при навигации назад/вперед
-        window.onpopstate = event => {
-            this._onRoute((event?.currentTarget as Window)?.location?.pathname); // Получаем текущий путь и обрабатываем его
-        };
-        this._onRoute(window.location.pathname); // Обрабатываем начальный путь при запуске
+        // Устанавливаем обработчик события на изменение истории
+        window.onpopstate = event => {this._onRoute((event?.currentTarget as Window)?.location?.pathname)}; // Обрабатываем изменение маршрута
+        this._onRoute(window.location.pathname); // Обрабатываем текущий путь при старте
     }
 
-    // Метод для обработки изменения маршрута
+    // Метод для обработки маршрута
     _onRoute(pathname: string) {
-        const route = this.getRoute(pathname); // Получаем маршрут по текущему пути
-        if (!route) {
-            return; // Если маршрут не найден, выходим из метода
-        }
+        const route = this.getRoute(pathname); // Получаем маршрут по пути
+        if (!route) {return} // Если маршрут не найден, выходим
 
-        // Если текущий маршрут существует и не равен новому маршруту, скрываем текущий маршрут
-        if (this._currentRoute && this._currentRoute !== route) {
-            this._currentRoute.leave(); // Вызываем метод leave у текущего маршрута
-        }
+        // Если текущий маршрут существует и он не равен новому маршруту, вызываем leave для текущего маршрута
+        if (this._currentRoute && this._currentRoute !== route) {this._currentRoute.leave()}
 
         this._currentRoute = route; // Устанавливаем новый текущий маршрут
         route.render(); // Рендерим новый маршрут
     }
 
-    // Метод для перехода на указанный маршрут
-    go(pathname: string) {
-        this.history?.pushState({}, "", pathname); // Добавляем новый путь в историю
+    // Метод для перехода по маршруту
+    go(pathname: string) {this.history?.pushState({}, "", pathname); // Добавляем новый маршрут в историю
         this._onRoute(pathname); // Обрабатываем новый маршрут
     }
 
-    // Метод для перехода на предыдущий маршрут
-    back() {
-        this.history?.back(); // Переход назад в истории
-    }
+    // Метод для возврата на предыдущий маршрут
+    back() {this.history?.back()} // Возвращаемся на предыдущую страницу в истории
 
-    // Метод для перехода на следующий маршрут
-    forward() {
-        this.history?.forward(); // Переход вперед в истории
-    }
+    // Метод для перехода вперед в истории
+    forward() {this.history?.forward()} // Переходим на следующую страницу в истории
 
-    // Метод для обновления текущего маршрута
-    update() {
-        this.history?.go(0); // Обновление текущей страницы
-    }
+    // Метод для обновления текущей страницы
+    update() {this.history?.go(0)} // Обновляем текущую страницу
 
     // Метод для получения маршрута по пути
-    getRoute(pathname: string) {
-        return this.routes?.find(route => route.match(pathname)); // Возвращаем маршрут, соответствующий указанному пути
-    }
+    getRoute(pathname: string) {return this.routes?.find(route => route.match(pathname))} // Находим маршрут, соответствующий переданному пути
+
 }
 
-export default Router; // Экспорт класса Router по умолчанию
+export default Router;
+

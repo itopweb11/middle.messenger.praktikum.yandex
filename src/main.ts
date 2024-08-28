@@ -1,51 +1,57 @@
-import './style/main.scss'; // Импорт главного файла стилей
-import * as Components from './components'; // Импорт всех компонентов из директории components
-import * as Pages from './pages'; // Импорт всех страниц из директории pages
-import { registerComponent } from "./helpers/registerComponent.ts"; // Функция для регистрации компонентов
-import Router from "./helpers/router.ts"; // Модуль для управления маршрутизацией
-import { BASE_URLS } from "./config.ts"; // Константы с базовыми URL
-import { initialStateApp } from "./services/app.ts"; // Функция для инициализации состояния приложения
-import { IAppState } from "./modalTypes/modalTypes.ts"; // Интерфейс для состояния приложения
-import { Store } from "./helpers/store.ts"; // Класс Store для управления состоянием приложения
+// Импортируем основные стили приложения
+import './styles/main.scss';
+// Импортируем все компоненты из директории components
+import * as Components from './components';
+// Импортируем все страницы из директории pages
+import * as Pages from './pages';
+// Импортируем функцию для регистрации компонентов
+import { registerComp } from "./helpers/registerComponents.ts";
+// Импортируем маршрутизатор
+import Router from "./helpers/router.ts";
+// Импортируем базовые URL-адреса из конфигурации
+import { BASE_URLS } from "./config.ts";
+// Импортируем функцию для инициализации состояния приложения
+import { stateApp } from "./services/app.ts";
+// Импортируем интерфейс состояния приложения
+import { IAppState } from "./typesModels/typesModels.ts";
+// Импортируем класс Store для управления состоянием приложения
+import { Store } from "./helpers/store.ts";
 
-// Регистрация всех компонентов в системе
+// Регистрируем все компоненты, перебирая их по именам и значениям
 Object.entries(Components).forEach(
-    ([componentName, component]) => registerComponent(componentName, component) // Регистрируем каждый компонент по его имени
-);
+    ([componentName, component]) => registerComp(componentName, component) // Регистрируем каждый компонент
+)
 
-// Объявление глобального интерфейса для окна браузера
+// Объявляем глобальные типы и интерфейсы
 declare global {
-    interface Window {
-        store: Store<IAppState>; // Добавление свойства store в глобальный объект window
-    }
-
-    // Определение типа Nullable для упрощения работы с возможными null значениями
-    type Nullable<T> = T | null;
+    interface Window {store: Store<IAppState>} // Добавляем свойство store в интерфейс Window
+    type Nullable<T> = T | null; // Определяем тип Nullable, который может быть T или null
 }
 
-// Инициализация состояния приложения
+// Инициализируем начальное состояние приложения
 const initState: IAppState = {
-    error: null, // Начальное состояние ошибки
-    user: undefined, // Начальное состояние пользователя
-    currentChat: null, // Начальное состояние текущего чата
-    chats: [], // Начальное состояние списка чатов
+    chats: [], // Начальное значение для списка чатов
+    currentChat: null, // Начальное значение для текущего чата
+    user: undefined, // Начальное значение для пользователя
+    error: null, // Начальное значение для ошибок
 }
 
-// Создание нового экземпляра Store с начальным состоянием
+// Создаем новое состояние хранилища и присваиваем его объекту window
 window.store = new Store<IAppState>(initState);
 
-// Создание нового экземпляра Router с указанием корневого элемента приложения
+// Создаем новый экземпляр маршрутизатора, указывая корневой элемент приложения
 const router = new Router(".app");
+// Инициализируем состояние приложения
+stateApp();
 
-// Инициализация состояния приложения
-initialStateApp();
+// Настраиваем маршрутизацию, связывая URL-адреса с соответствующими страницами
+router
+    .use(BASE_URLS['page-login'], Pages.LoginPage) // Маршрут для страницы входа
+    .use(BASE_URLS['page-sign-up'], Pages.PageRegistration) // Маршрут для страницы регистрации
+    .use(BASE_URLS['page-profile'], Pages.PageProfile) // Маршрут для страницы профиля
+    .use(BASE_URLS['page-404'], Pages.Page404) // Маршрут для страницы 404 (не найдено)
+    .use(BASE_URLS['page-500'], Pages.Page500) // Маршрут для страницы 500 (внутренняя ошибка сервера)
+    .use(BASE_URLS['page-chat'], Pages.PageChat) // Маршрут для страницы чата
+    .start(); // Запускаем маршрутизатор
 
-// Настройка маршрутов для приложения
-router.use(BASE_URLS['page-default'], Pages.LoginPage) // Установка маршрута по умолчанию
-    .use(BASE_URLS['page-login'], Pages.LoginPage) // Установка маршрута для страницы логина
-    .use(BASE_URLS['page-sign-up'], Pages.PageRegistration) // Установка маршрута для страницы регистрации
-    .use(BASE_URLS['page-profile'], Pages.PageProfile) // Установка маршрута для страницы профиля
-    .use(BASE_URLS['page-404'], Pages.Page404) // Установка маршрута для страницы 404 (не найдено)
-    .use(BASE_URLS['page-500'], Pages.Page500) // Установка маршрута для страницы 500 (ошибка сервера)
-    .use(BASE_URLS['page-chat'], Pages.PageChat) // Установка маршрута для страницы чата
-    .start(); // Запуск маршрутизатора
+

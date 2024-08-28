@@ -1,10 +1,10 @@
 <form class="container">
     {{#> FormProfile user=user button-page='pageChat'}}
-        {{>InputProfile label="Почта" type="text" name="email" value=email readOnly=true }}
-        {{>InputProfile label="Логин" type="text" name="login" value=login readOnly=true }}
-        {{>InputProfile label="Имя" type="text" name="first_name" value=first_name readOnly=true }}
-        {{>InputProfile label="Имя" type="text" name="second_name" value=second_name readOnly=true }}
-        {{>InputProfile label="Имя в чате" type="text" name="display_name" value=nameInChat readOnly=true }}
-        {{>InputProfile label="Телефон" type="text" name="phone" value=phone noLine=true readOnly=true }}
+        {{>InputWide label="Почта" type="text" name="email" value=email readOnly=true }}
+        {{>InputWide label="Логин" type="text" name="login" value=login readOnly=true }}
+        {{>InputWide label="Имя" type="text" name="first_name" value=first_name readOnly=true }}
+        {{>InputWide label="Фамилия" type="text" name="second_name" value=second_name readOnly=true }}
+        {{>InputWide label="Имя в чате" type="text" name="display_name" value=nameInChat readOnly=true }}
+        {{>InputWide label="Телефон" type="text" name="phone" value=phone noLine=true readOnly=true }}
     {{/FormProfile}}
 </form>
