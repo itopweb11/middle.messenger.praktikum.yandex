@@ -25,3 +25,5 @@ export class Store<State extends Record<string, unknown>> extends EventDispatche
         this.emit(StoreEvents.Updated, prevState, nextState); // Вызываем событие обновления, передавая предыдущее и новое состояние
     }
 }
+
+

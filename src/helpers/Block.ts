@@ -190,5 +190,5 @@ export class Block {
     }
 }
 
-export default Block; // Экспортируем класс Block по умолчанию
+export default Block;
 

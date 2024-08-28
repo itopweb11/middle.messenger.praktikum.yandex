@@ -40,3 +40,5 @@ export function registerComp(name: string, Component: typeof Block) {
         return `<div ${dataAttribute}>${contents}</div>`;
     });
 }
+
+
