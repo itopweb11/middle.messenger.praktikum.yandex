@@ -1,5 +1,5 @@
 import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
-import { IUser } from "../../typesModels/typesModels.ts"; // Импортируем интерфейс IUser
+import { IUser } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс IUser
 import { StoreEvents } from "../../helpers/store.ts"; // Импортируем события хранилища
 import { UserPassword, UserProfile } from "../../services/userSettings.ts"; // Импортируем функции для обновления пароля и профиля пользователя
 import Router from "../../helpers/router.ts"; // Импортируем маршрутизатор

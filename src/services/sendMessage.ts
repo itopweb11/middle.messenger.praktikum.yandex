@@ -1,4 +1,4 @@
-import { IChat, IUser } from "../typesModels/typesModels.ts"; // Импортируем интерфейсы для чата и пользователя
+import { IChat, IUser } from "../modalTypes/modalTypes.ts"; // Импортируем интерфейсы для чата и пользователя
 import { BASE_SOCKET_CHAT } from "../config.ts"; // Импортируем базовый URL для WebSocket чата
 import SocketIO from "../chatApi/socketApi.ts"; // Импортируем класс для работы с WebSocket
 

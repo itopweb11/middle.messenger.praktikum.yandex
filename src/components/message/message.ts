@@ -1,5 +1,5 @@
 import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
-import { IChatMessage } from "../../typesModels/typesModels.ts"; // Импортируем интерфейс для сообщения чата
+import { IChatMessage } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс для сообщения чата
 import { getShortDate } from "../../utils/dateUtils.ts"; // Импортируем утилиту для форматирования даты
 import { BASE_RESOURCES_URL } from "../../config.ts"; // Импортируем базовый URL для ресурсов
 

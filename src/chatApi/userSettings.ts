@@ -1,5 +1,5 @@
 import HTTPPath from "../helpers/http.ts"; // Импортируем класс HTTPPath для выполнения HTTP-запросов
-import { IPasswords, IUser } from "../typesModels/typesModels.ts"; // Импортируем интерфейсы для данных пользователя и паролей
+import { IPasswords, IUser } from "../modalTypes/modalTypes.ts"; // Импортируем интерфейсы для данных пользователя и паролей
 
 export class UserSetting { // Класс для работы с настройками пользователя
     private httpPath = new HTTPPath(); // Экземпляр класса HTTPPath для отправки HTTP-запросов

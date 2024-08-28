@@ -1,7 +1,7 @@
 import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import modalController from "../../helpers/modalController.ts"; // Импортируем контроллер модальных окон
 import { searchUsers } from "../../services/userSettings.ts"; // Импортируем функцию для поиска пользователей по логину
-import { IUser } from "../../typesModels/typesModels.ts"; // Импортируем интерфейс для пользователя
+import { IUser } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс для пользователя
 import { UserItem } from "../index.ts"; // Импортируем компонент UserItem
 import { addChatUser, deleteChatUsers } from "../../services/chat.ts"; // Импортируем функции для добавления и удаления пользователей из чата
 import { stateCurrentChat } from "../../services/app.ts"; // Импортируем функцию для обновления состояния текущего чата

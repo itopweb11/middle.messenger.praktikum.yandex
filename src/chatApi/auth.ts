@@ -1,5 +1,5 @@
 import HTTPPath from "../helpers/http.ts"; // Импортируем класс HTTPPath для выполнения HTTP-запросов
-import { IAuthData, IUser } from "../typesModels/typesModels.ts"; // Импортируем интерфейсы для данных аутентификации и пользователя
+import { IAuthData, IUser } from "../modalTypes/modalTypes.ts"; // Импортируем интерфейсы для данных аутентификации и пользователя
 
 export class AuthApi { // Класс для работы с API аутентификации
     private httpRoute = new HTTPPath(); // Экземпляр класса HTTPPath для отправки HTTP-запросов

@@ -1,5 +1,5 @@
 import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
-import { IUser } from "../../typesModels/typesModels.ts"; // Импортируем интерфейс для пользователя
+import { IUser } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс для пользователя
 import { getUserName } from "../../utils/userUtils.ts"; // Импортируем утилиту для получения имени пользователя
 
 // Интерфейс для свойств компонента UserItem

@@ -1,5 +1,5 @@
 // Импортируем интерфейс IUser для работы с данными пользователя
-import { IUser } from "../typesModels/typesModels.ts";
+import { IUser } from "../modalTypes/modalTypes.ts";
 
 // Функция для получения имени пользователя
 export const getUserName = (user: IUser, fullName?: boolean) => {

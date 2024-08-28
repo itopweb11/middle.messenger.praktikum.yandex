@@ -1,9 +1,9 @@
 import { getUser } from "./auth.ts"; // Импортируем функцию для получения информации о пользователе
 import Router from "../helpers/router.ts"; // Импортируем маршрутизатор для управления навигацией
 import { BASE_URLS } from "../config.ts"; // Импортируем базовые URL-адреса из конфигурации
-import { IUser } from "../typesModels/typesModels.ts"; // Импортируем интерфейс IUser
+import { IUser } from "../modalTypes/modalTypes.ts"; // Импортируем интерфейс IUser
 import { getChats, getChatToken, getChatUsers } from "./chat.ts"; // Импортируем функции для работы с чатами
-import { IChat } from "../typesModels/typesModels.ts"; // Импортируем интерфейс IChat
+import { IChat } from "../modalTypes/modalTypes.ts"; // Импортируем интерфейс IChat
 import { connectMessages } from "./sendMessage.ts"; // Импортируем функцию для открытия соединения сообщений
 
 // Асинхронная функция для инициализации состояния приложения

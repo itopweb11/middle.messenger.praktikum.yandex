@@ -1,5 +1,5 @@
 import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
-import { ALL_VALIDATE_FIELDS, IValidateType } from "../../typesModels/typesModels.ts"; // Импортируем константу с правилами валидации и интерфейс для валидации
+import { ALL_VALIDATE_FIELDS, IValidateType } from "../../modalTypes/modalTypes.ts"; // Импортируем константу с правилами валидации и интерфейс для валидации
 
 // Интерфейс для свойств компонента Modal
 interface IModal extends IProps {

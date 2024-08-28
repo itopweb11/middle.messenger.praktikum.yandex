@@ -1,5 +1,5 @@
 import UserSetting from "../chatApi/userSettings.ts"; // Импортируем класс для работы с API настроек пользователя
-import { IPasswords, IUser } from "../typesModels/typesModels.ts"; // Импортируем интерфейсы для паролей и пользователя
+import { IPasswords, IUser } from "../modalTypes/modalTypes.ts"; // Импортируем интерфейсы для паролей и пользователя
 import { responseHasError } from "../utils/apiUtils.ts"; // Импортируем утилиту для проверки ошибок в ответах API
 import { stateUser } from "./app.ts"; // Импортируем функцию для обновления состояния пользователя
 import Router from "../helpers/router.ts"; // Импортируем маршрутизатор для управления навигацией

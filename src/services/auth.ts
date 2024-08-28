@@ -1,4 +1,4 @@
-import { IAuthData, IUser } from "../typesModels/typesModels.ts"; // Импортируем интерфейсы для данных аутентификации и пользователя
+import { IAuthData, IUser } from "../modalTypes/modalTypes.ts"; // Импортируем интерфейсы для данных аутентификации и пользователя
 import AuthApi from "../chatApi/auth.ts"; // Импортируем класс для работы с API аутентификации
 import { responseHasError } from "../utils/apiUtils.ts"; // Импортируем утилиту для проверки ошибок в ответах API
 import Router from "../helpers/router.ts"; // Импортируем маршрутизатор для управления навигацией

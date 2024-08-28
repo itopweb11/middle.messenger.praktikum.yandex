@@ -13,7 +13,7 @@ import { BASE_URLS } from "./config.ts";
 // Импортируем функцию для инициализации состояния приложения
 import { stateApp } from "./services/app.ts";
 // Импортируем интерфейс состояния приложения
-import { IAppState } from "./typesModels/typesModels.ts";
+import { IAppState } from "./modalTypes/modalTypes.ts";
 // Импортируем класс Store для управления состоянием приложения
 import { Store } from "./helpers/store.ts";
 

@@ -1,6 +1,6 @@
 import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import { signUp } from "../../services/auth.ts"; // Импортируем функцию для регистрации пользователя
-import { IUser } from "../../typesModels/typesModels.ts"; // Импортируем интерфейс IUser
+import { IUser } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс IUser
 import { BASE_URLS } from "../../config.ts"; // Импортируем базовые URL-адреса из конфигурации
 import Router from "../../helpers/router.ts"; // Импортируем маршрутизатор
 

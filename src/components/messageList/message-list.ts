@@ -1,5 +1,5 @@
 import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
-import { IChatMessage, IUser, IChat } from "../../typesModels/typesModels.ts"; // Импортируем интерфейс для сообщений чата
+import { IChatMessage, IUser, IChat } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс для сообщений чата
 import { Message } from "../index.ts"; // Импортируем компонент Message
 import { IMessage } from "../message/message.ts"; // Импортируем интерфейс IMessage
 import { StoreEvents } from "../../helpers/store.ts"; // Импортируем события хранилища

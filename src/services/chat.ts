@@ -1,6 +1,6 @@
 import { responseHasError } from "../utils/apiUtils.ts"; // Импортируем утилиту для проверки ошибок в ответах API
 import ChatApi from "../chatApi/chat.ts"; // Импортируем класс для работы с API чатов
-import { IChat, IChatUsersData, IUser } from "../typesModels/typesModels.ts"; // Импортируем интерфейсы для чата и пользователей
+import { IChat, IChatUsersData, IUser } from "../modalTypes/modalTypes.ts"; // Импортируем интерфейсы для чата и пользователей
 import { stateCurrentChat, renovateChats } from "./app.ts"; // Импортируем функции для обновления состояния чата и списка чатов
 
 // Создаем экземпляр ChatApi с базовым URL для чатов
