@@ -19,13 +19,13 @@
 
 
 ## Доступные страницы
-- Главная - http://localhost:3000,
-- Авторизация - http://localhost:3000
-- Регистрация - http://localhost:3000
-- Профиль - http://localhost:3000
-- Чат - http://localhost:3000
-- 404 - http://localhost:3000
-- 500 - http://localhost:3000
+- Главная - http://localhost:3000/messenger
+- Авторизация - http://localhost:3000/
+- Регистрация - http://localhost:3000/sign-up
+- Профиль - http://localhost:3000/settings
+- Чат - http://localhost:3000/messenger
+- 404 - http://localhost:3000/404
+- 500 - http://localhost:3000/500
 
 
 ## Доавил
