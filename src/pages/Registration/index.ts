@@ -1,2 +1,2 @@
-export {PageRegistration as default} from './Registration.ts';
+export {PageRegistration as default} from './r.ts';
 
