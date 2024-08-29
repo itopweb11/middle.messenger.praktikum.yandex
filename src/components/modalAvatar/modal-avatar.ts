@@ -9,7 +9,7 @@ import { updateChatAvatar } from "../../services/chat.ts"; // Импортиру
 interface IModalAvatar extends IProps {
     onAddFile?: (e: InputEvent) => void; // Функция для обработки добавления файла (необязательная)
     cancelClick?: () => void; // Функция для обработки клика по кнопке "Отмена" (необязательная)
-    type: 'user' | 'chat'; // Тип модального окна (для пользователя или чата)
+    type: 'user' | 'Chat'; // Тип модального окна (для пользователя или чата)
     newAvatar?: string; // Новый аватар (необязательный)
     oldAvatar?: string; // Старый аватар (необязательный)
     file?: unknown; // Файл (необязательный)
@@ -23,7 +23,7 @@ export class ModalAvatar extends Block { // Класс ModalAvatar, наслед
 
         // Функция для обработки клика по кнопке "ОК"
         props.okClick = async () => {
-            if (this.props.type === 'chat') { // Если тип - чат
+            if (this.props.type === 'Chat') { // Если тип - чат
                 const chat = window.store.getState().chats?.find(item => item.id === window.store.getState().currentChat?.id); // Находим текущий чат
                 if (chat) {
                     chat.avatar = window.store.getState().currentChat?.avatar; // Обновляем аватар чата
@@ -47,7 +47,7 @@ export class ModalAvatar extends Block { // Класс ModalAvatar, наслед
                     modalController.closeModal(); // Закрываем модальное окно
                     break;
                 }
-                case "chat": {
+                case "Chat": {
                     const chat = window.store.getState().currentChat; // Получаем текущий чат
                     if (chat && this.props.oldAvatar) {this.props.newAvatar = ''; // Очищаем новый аватар
                         modalController.closeModal(); // Закрываем модальное окно
@@ -74,7 +74,7 @@ export class ModalAvatar extends Block { // Класс ModalAvatar, наслед
                         }).catch((error) => console.log(error)); // Обрабатываем ошибки
                         break;
                     }
-                    case "chat": { // Если тип - чат
+                    case "Chat": { // Если тип - чат
                         const _chat = window.store.getState().currentChat; // Получаем текущий чат
                         if (!_chat) break; // Если чата нет, выходим
                         updateChatAvatar(formData, _chat.id) // Обновляем аватар чата
@@ -82,7 +82,7 @@ export class ModalAvatar extends Block { // Класс ModalAvatar, наслед
                                 this.props.newAvatar = chat.avatar; // Устанавливаем новый аватар
                                 modalController.addModal((new ModalAvatar({ // Создаем новое модальное окно для аватара
                                     oldAvatar: window.store.getState().currentChat?.avatar || '',
-                                    type: 'chat'
+                                    type: 'Chat'
                                 })) as unknown as Block);
                             })
                             .catch((error) => console.log(error)); // Обрабатываем ошибки

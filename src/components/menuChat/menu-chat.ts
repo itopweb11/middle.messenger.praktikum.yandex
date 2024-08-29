@@ -49,7 +49,7 @@ export class MenuChat extends Block { // Класс MenuChat, наследующ
             // Создаем и добавляем модальное окно для изменения аватара чата
             modalController.addModal((new ModalAvatar({
                 oldAvatar: window.store.getState().currentChat?.avatar || '', // Старый аватар чата
-                type: 'chat' // Тип модального окна
+                type: 'Chat' // Тип модального окна
             })) as unknown as Block);
             modalController.openModal(); // Открываем модальное окно
             this.props.closeMenu(); // Закрываем меню
