@@ -1,4 +1,4 @@
-import EventDispatcher from "./eventBus.ts"; // Импортируем класс EventDispatcher для управления событиями
+import EventDispatcher from "./EventBus.ts"; // Импортируем класс EventDispatcher для управления событиями
 
 // Перечисление для событий хранилища
 export enum StoreEvents {Updated = 'Updated'} // Событие, которое будет вызываться при обновлении состояния
@@ -25,3 +25,5 @@ export class Store<State extends Record<string, unknown>> extends EventDispatche
         this.emit(StoreEvents.Updated, prevState, nextState); // Вызываем событие обновления, передавая предыдущее и новое состояние
     }
 }
+
+

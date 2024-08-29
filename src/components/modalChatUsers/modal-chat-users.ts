@@ -1,4 +1,4 @@
-import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
+import { IProps, Block } from "../../helpers/Block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import modalController from "../../helpers/modalController.ts"; // Импортируем контроллер модальных окон
 import { searchUsers } from "../../services/userSettings.ts"; // Импортируем функцию для поиска пользователей по логину
 import { IUser } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс для пользователя

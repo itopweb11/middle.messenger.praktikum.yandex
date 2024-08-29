@@ -1,4 +1,4 @@
-import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
+import { IProps, Block } from "../../helpers/Block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import { signUp } from "../../services/auth.ts"; // Импортируем функцию для регистрации пользователя
 import { IUser } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс IUser
 import { BASE_URLS } from "../../config.ts"; // Импортируем базовые URL-адреса из конфигурации
@@ -80,6 +80,9 @@ export class PageRegistration extends Block {
                     ref="form"
                     cancelLink="${BASE_URLS['page-login']}"
                 }}}
-            </form>`)
+             </form>`)
+
     }
-}
+}//ssssss
+
+

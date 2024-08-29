@@ -1,4 +1,4 @@
-import { IProps, Block } from "../../helpers/block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
+import { IProps, Block } from "../../helpers/Block.ts"; // Импортируем интерфейс IProps и класс Block из основной библиотеки
 import { IChat } from "../../modalTypes/modalTypes.ts"; // Импортируем интерфейс для чата
 import modalController from "../../helpers/modalController.ts"; // Импортируем контроллер модальных окон
 import { ModalAvatar, ModalChatUsers } from "../index.ts"; // Импортируем компоненты модальных окон для аватара и пользователей чата
@@ -49,7 +49,7 @@ export class MenuChat extends Block { // Класс MenuChat, наследующ
             // Создаем и добавляем модальное окно для изменения аватара чата
             modalController.addModal((new ModalAvatar({
                 oldAvatar: window.store.getState().currentChat?.avatar || '', // Старый аватар чата
-                type: 'chat' // Тип модального окна
+                type: 'Chat' // Тип модального окна
             })) as unknown as Block);
             modalController.openModal(); // Открываем модальное окно
             this.props.closeMenu(); // Закрываем меню

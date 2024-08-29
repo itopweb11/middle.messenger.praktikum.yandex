@@ -1,4 +1,4 @@
-import HTTPPath from "../helpers/http.ts"; // Импортируем класс HTTPPath для выполнения HTTP-запросов
+import HTTPPath from "../helpers/Http.ts"; // Импортируем класс HTTPPath для выполнения HTTP-запросов
 import { IChatUsersData } from "../modalTypes/modalTypes.ts"; // Импортируем интерфейс для данных пользователей чата
 
 export class ChatApi { // Класс для работы с API чатов

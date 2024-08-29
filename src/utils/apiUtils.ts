@@ -1,6 +1,6 @@
 import { BASE_URLS } from "../config.ts"; // Импортируем базовые URL-адреса из конфигурации
 import Router from "../helpers/router.ts"; // Импортируем маршрутизатор для управления навигацией
-import { IResult } from "../helpers/http.ts"; // Импортируем интерфейс для результата HTTP-запроса
+import { IResult } from "../helpers/Http.ts"; // Импортируем интерфейс для результата HTTP-запроса
 
 // Функция для проверки наличия ошибок в ответе API
 export const responseHasError = (response: IResult) => {

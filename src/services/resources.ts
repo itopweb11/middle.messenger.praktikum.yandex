@@ -18,3 +18,5 @@ const uploadResource = async (file: FormData) => {
 
 // Экспортируем функцию для использования в других модулях
 export {uploadResource}
+
+

@@ -1,4 +1,4 @@
-import { Block } from "../../helpers/block.ts"; // Импортируем класс Block из основной библиотеки
+import { Block } from "../../helpers/Block.ts"; // Импортируем класс Block из основной библиотеки
 
 // Класс Page404, который наследует от класса Block
 export class Page404 extends Block {

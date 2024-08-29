@@ -1,4 +1,4 @@
-import HTTPPath from "../helpers/http.ts"; // Импортируем класс HTTPPath для выполнения HTTP-запросов
+import HTTPPath from "../helpers/Http.ts"; // Импортируем класс HTTPPath для выполнения HTTP-запросов
 import { IPasswords, IUser } from "../modalTypes/modalTypes.ts"; // Импортируем интерфейсы для данных пользователя и паролей
 
 export class UserSetting { // Класс для работы с настройками пользователя
@@ -12,13 +12,13 @@ export class UserSetting { // Класс для работы с настройк
     // Метод для изменения профиля пользователя
     public changeProfile(userData: IUser) {
         return this.httpPath.put(this.mainUrl + '/profile',
-            { data: userData }); // Отправляем PUT-запрос на /profile с данными пользователя
+            { data: userData }); // Отправляем PUT-запрос на /Profile с данными пользователя
     }
 
     // Метод для изменения аватара пользователя
     public changeAvatar(file: FormData) {
         return this.httpPath.put(this.mainUrl + '/profile/avatar',
-            { data: file }); // Отправляем PUT-запрос на /profile/avatar с данными файла
+            { data: file }); // Отправляем PUT-запрос на /Profile/avatar с данными файла
     }
 
     // Метод для изменения пароля пользователя

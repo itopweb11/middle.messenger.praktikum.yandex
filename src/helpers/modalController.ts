@@ -1,4 +1,4 @@
-import Block from "./block.ts"; // Импортируем класс Block, который будет использоваться для создания модальных окон
+import Block from "./Block.ts"; // Импортируем класс Block, который будет использоваться для создания модальных окон
 
 class DialogController {
     private static __instance: DialogController; // Статическая переменная для хранения единственного экземпляра класса (Singleton)

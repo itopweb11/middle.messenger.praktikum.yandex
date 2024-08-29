@@ -20,8 +20,9 @@
 
     "strict": true,
     "noFallthroughCasesInSwitch": true,
-    "typeRoots": ["node_modules/@types", "models"]
+    "typeRoots": ["node_modules/@types", "modalTypes"]
   },
 
   "include": ["src"]
 }
+
