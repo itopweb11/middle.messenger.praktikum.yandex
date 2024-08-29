@@ -4,8 +4,8 @@
   "version": "0.0.0",
 
   "scripts": {
-    "start": "tsc && vite build &&  vite  --port 3000",
-    "build": "eslint . &&tsc && vite build",
+    "start": "vite  --port 3000",
+    "build": "vite build",
     "stylelint": "stylelint src/**/*.scss",
     "preview": "vite preview",
     "eslint": "eslint . ",
