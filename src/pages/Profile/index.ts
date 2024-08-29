@@ -1,2 +1,2 @@
-export {PageProfile as default} from './profile.ts';
+export {PageProfile as default} from './profile';
 
