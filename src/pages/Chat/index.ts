@@ -1,2 +1,2 @@
 import "./pageChat.scss";
-export { PageChat as default } from './Chat.ts';
+export { PageChat as default } from './1.ts';
