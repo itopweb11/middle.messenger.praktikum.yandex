@@ -81,11 +81,11 @@ export class MenuChat extends Block { // Класс MenuChat, наследующ
                     onClick=deleteUser
                     icon='delete'
                     }}}
-                    <!--{{{ MenuItem
+                    {{{ MenuItem
                     desc='Изменить аватар чата'
                     onClick=changeAvatarChat
                     icon='avatar'
-                    }}}-->
+                    }}}
                 </ul>
             </nav>
         `);
