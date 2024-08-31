@@ -124,7 +124,7 @@ export class Block {
             this._element = newElement; // Обновляем ссылку на элемент
             this._addEvents(); // Добавляем события
         } catch (err: unknown) {
-            console.error('Error rendering component:', err); // Логируем ошибку
+            //console.error('Error rendering component:', err); // Логируем ошибку
         } // Обрабатываем ошибки
     }
 
