@@ -1,0 +1,47 @@
+.inputSearch {
+    width: 100%;
+    padding: 5px;
+    position: relative;
+    border-radius: 8px;
+    background-color: var(--text-gray-color);
+    display: block;
+
+
+    &__label {
+        color: var(--text-plash-color);
+        position: absolute;
+        top: 15px;
+        left: 40%;
+    }
+
+    &::before {
+        background: url("../../img-icons/icons/search.svg") no-repeat;
+        position: absolute;
+        content: "";
+        top: 17px;
+        left: 32%;
+        width: 20px;
+        height: 20px;
+
+    }
+
+    &__value {
+        position: relative;
+        border: none;
+        background-color: transparent;
+        transition-duration: 600ms;
+        cursor: pointer;
+        padding: 10px;
+
+        &:focus {
+            border:none;
+            background-color: var(--text-gray-color);
+            transition-duration: 300ms;
+        }
+    }
+}
+
+
+
+
+

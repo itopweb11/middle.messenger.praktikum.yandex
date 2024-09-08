@@ -1,0 +1,54 @@
+.menuItem {
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+
+
+    &:hover{
+        opacity: 0.9;
+    }
+
+    .menuItem__icon {
+        width: 22px;
+        margin-right: 5px;
+        height: 22px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        padding: 1px;
+
+        &.menuItem__icon_media {
+            background-image: url("../../img-icons/icons/Union (1).png") ;
+        }
+
+        &.menuItem__icon_file {
+            background-image: url("../../img-icons/icons/Union (2).png");
+        }
+
+        &.menuItem__icon_location {
+            background-image: url("../../img-icons/icons/Union (3).png");
+        }
+
+        &.menuItem__icon_plus{
+            background-image: url("../../img-icons/icons/circle-plus.svg");
+        }
+
+        &.menuItem__icon_delete{
+            background-image: url("../../img-icons/icons/circle-x.svg") ;
+        }
+
+        &.menuItem__icon_avatar{
+            background-image: url("../../img-icons/icons/chat-avatar.svg") ;
+        }
+    }
+
+    .menuItem__caption{
+        font-size: 12px;
+
+        &:hover {
+            transition: .3s;
+            color: var(--blue);
+        }
+    }
+}

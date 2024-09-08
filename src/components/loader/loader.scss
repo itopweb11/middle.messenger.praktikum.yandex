@@ -1,0 +1,36 @@
+.loader {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  display: inline-block;
+}
+
+.loader::after,
+.loader::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid black;
+  box-sizing: border-box;
+  animation: rotation 2s ease-in-out infinite;
+}
+
+.loader::after {
+  animation-delay: 1s;
+  border-color: #3369F3;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+
+}

@@ -1,3 +1,3 @@
-import './formProfile.scss';
-export {  FormProfile as default  } from './formProfile.ts';
+import './form-profile.scss';
+export {  FormProfile as default  } from './form-profile';
 

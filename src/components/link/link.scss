@@ -1,36 +1,46 @@
 .link {
-    color: var(--blue);
-    cursor: pointer;
+    font-size: 13px;
+    display: flex;
     text-decoration: none;
     padding: 5px;
-    display: flex;
+    color: var(--blue);
+    font-weight: bolder;
+    cursor: pointer;
 
 
     &:hover {
+        transition: .5s;
         text-decoration: underline;
+        font-size: 13.4px;
     }
 
     &.link-line{
-        border-bottom: 1px solid var(--text-plash-color);
         width: 510px;
+        border-bottom: 1px solid var(--text-plash-color);
     }
 
     .link-icon{
-        background: url("../../img-icons/icons/Polygon 1.svg") no-repeat;
         width: 12px;
+        font-size: 16px;
         height: 12px;
         margin-left: 5px;
         margin-top: 5px;
-        font-size: 16px;
+        background: url("../../img-icons/icons/Polygon 1.svg") no-repeat;
     }
 
-    &.link-initial{
+    &.link-success{
         color: var(--blue);
     }
 
     &.link-danger{
         color: var(--red);
     }
+
+    &.link-primary{
+        color: var(--text-plash-color);
+    }
+
+
 }
 
 

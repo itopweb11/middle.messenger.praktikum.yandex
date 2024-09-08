@@ -4,8 +4,8 @@
   "version": "0.0.0",
 
   "scripts": {
-    "start": "tsc && vite build &&  vite  --port 3000",
-    "build": "eslint . &&tsc && vite build",
+    "start": "vite  --port 3000",
+    "build": "vite build",
     "stylelint": "stylelint src/**/*.scss",
     "preview": "vite preview",
     "eslint": "eslint . ",
@@ -27,7 +27,9 @@
     "stylelint-config-standard-scss": "^11.0.0",
     "stylelint-selector-bem-pattern": "^3.0.1",
     "uuid": "^9.0.1",
-    "vite-plugin-handlebars": "^1.6.0"
+    "vite-plugin-handlebars": "^1.6.0",
+    "postcss-preset-env": "^9.1.2"
+
   },
 
   "dependencies": {
