@@ -11,6 +11,11 @@
     "dev": "vite",
     "test": "mocha --loader ts-node/esm 'src/**/*.spec.ts'"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "devDependencies": {
     "@types/chai": "^4.3.19",
     "@types/express": "^4.17.17",
