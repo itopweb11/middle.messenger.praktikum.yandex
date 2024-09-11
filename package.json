@@ -2,6 +2,7 @@
   "name": "chat",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "start": "vite  --port 3000",
     "build": "vite build",
@@ -9,7 +10,9 @@
     "preview": "vite preview",
     "eslint": "eslint . ",
     "dev": "vite",
-    "test": "mocha --loader ts-node/esm 'src/**/*.spec.ts'"
+    "test": "mocha",
+    "check_all": "npm-run-all stylelint  eslint  test",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
