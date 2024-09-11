@@ -19,3 +19,5 @@ global.document = jsdom.window.document;
 // Устанавливаем глобальные функции Mocha для использования в тестах
 global.describe = describe;
 global.it = it;
+
+

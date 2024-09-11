@@ -46,3 +46,5 @@ describe('Block', () => {
         expect(render.called); // Проверяем, что метод render был вызван снова
     });
 });
+
+
