@@ -43,3 +43,5 @@ describe('HTTP Transport', () => {
         assert(stubRequest.calledWithMatch('/url')); // Проверяем, что метод request был вызван с правильным URL
     });
 });
+
+

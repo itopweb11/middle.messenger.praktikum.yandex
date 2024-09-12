@@ -50,3 +50,5 @@ describe('Block', () => {
         expect(render.called); // Проверяем, что render был вызван хотя бы один раз
     });
 });
+
+
