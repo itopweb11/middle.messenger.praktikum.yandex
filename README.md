@@ -32,3 +32,7 @@
 - TS 
 - stylelint 
 - eslint
+- test
+- chai
+- mocha
+
